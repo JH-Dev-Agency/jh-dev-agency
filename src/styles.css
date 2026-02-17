@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+@import 'tailwindcss';
+
+@theme {
+  /* Definimos tus colores de marca aquí para usarlos como variables */
+  --color-brand-primary: #0ea5e9; /* Sky 500 - Tu azul eléctrico */
+  --color-brand-dark: #09090b; /* Zinc 950 - Tu fondo oscuro */
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Configuración base para el modo oscuro suave */
+:root {
+  color-scheme: light dark;
+}
+
+html.dark {
+  background-color: var(--color-brand-dark);
+  color: white;
+}
+
+/* Transiciones globales para el cambio de tema */
+body {
+  @apply transition-colors duration-300 ease-in-out;
+}

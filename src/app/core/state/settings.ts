@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class Settings {
+  // <--- CORRECCIÓN 1: Nombre correcto de la clase
   private platformId = inject(PLATFORM_ID);
 
   readonly language = signal<'es' | 'en'>('es');
@@ -17,38 +18,111 @@ export class Settings {
         blog: 'Blog',
         contact: 'Contacto',
       },
-      hero: {
-        badge: 'Agencia de Desarrollo',
-        title_prefix: 'Creamos Software que',
-        title_gradient: 'escala tu negocio.',
-        subtitle:
-          'En JH Dev Agency combinamos ingeniería de software, automatización con IA y diseño estratégico. Entregas Just-in-Time para mercados globales.',
-        cta_primary: 'Iniciar Proyecto',
-        cta_secondary: 'Ver Portafolio',
+      home: {
+        hero: {
+          badge: 'Agencia de Desarrollo',
+          title_prefix: 'Creamos Software que',
+          title_gradient: 'escala tu negocio.',
+          subtitle:
+            'En JH Dev Agency combinamos ingeniería de software, automatización con IA y diseño estratégico. Entregas Just-in-Time para mercados globales.',
+          cta_primary: 'Iniciar Proyecto',
+          cta_secondary: 'Ver Portafolio',
+        },
+        expertise: {
+          label: 'EXPERTISE',
+          title: 'Más que código, estrategia.',
+          cards: [
+            {
+              title: 'Desarrollo Web',
+              desc: 'Sitios ultrarrápidos y aplicaciones complejas con arquitecturas escalables.',
+            },
+            {
+              title: 'Automatización & IA',
+              desc: 'Automatiza procesos repetitivos y venta con agentes de inteligencia artificial.',
+            },
+            {
+              title: 'Productos SaaS',
+              desc: 'Desarrollo de producto completo (MVP) listo para recibir inversión.',
+            },
+          ],
+        },
+        cta_banner: {
+          title: '¿Tienes una idea en mente?',
+          desc: 'Deja de perder tiempo con soluciones lentas. Construyamos algo sólido, escalable y rápido.',
+          btn: 'Hablar con un Especialista',
+        },
       },
       services: {
         title: 'Nuestras Capacidades',
         subtitle: 'Soluciones técnicas diseñadas para velocidad y escalabilidad.',
         items: [
           {
+            slug: 'web-development',
             title: 'Desarrollo Web High-Performance',
             desc: 'Sitios ultra-rápidos con Next.js y Angular. Puntuación 100/100 en Google PageSpeed garantizada.',
             icon: 'code',
+            details: {
+              intro:
+                'No hacemos sitios que solo se "ven bien". Construimos plataformas que cargan en milisegundos y convierten visitantes en clientes.',
+              features: [
+                'Arquitectura SPA/SSR Híbrida',
+                'Optimización SEO Técnica Avanzada',
+                'Diseño UI/UX Mobile First',
+                'Integración con CMS Headless',
+              ],
+              cta: 'Auditar mi sitio actual',
+            },
           },
           {
+            slug: 'ai-automation',
             title: 'Automatización & IA',
             desc: 'Bots de WhatsApp, Agentes de IA y CRMs automatizados para que tu negocio venda 24/7 sin ti.',
             icon: 'cpu',
+            details: {
+              intro:
+                'La IA no es el futuro, es el presente. Integramos modelos LLM (como GPT-4) directamente en tus procesos de negocio.',
+              features: [
+                'Chatbots de Atención al Cliente 24/7',
+                'Análisis de Datos Predictivo',
+                'Automatización de Facturación y Email',
+                'Agentes de Ventas Autónomos',
+              ],
+              cta: 'Automatizar mi negocio',
+            },
           },
           {
+            slug: 'saas-product',
             title: 'SaaS & Aplicaciones a Medida',
             desc: 'Transformamos tu idea en un producto digital complejo (como PayMind o CardFlow) listo para el mercado.',
             icon: 'layers',
+            details: {
+              intro:
+                'Llevamos tu idea desde el servilleta hasta el lanzamiento. Especialistas en MVPs escalables y arquitecturas multi-tenant.',
+              features: [
+                'Desarrollo de Backend Robusto (Django/Node)',
+                'Paneles de Administración',
+                'Integración de Pagos (Stripe/PayPal)',
+                'Sistemas de Suscripción',
+              ],
+              cta: 'Cotizar mi App',
+            },
           },
           {
+            slug: 'cloud-infrastructure',
             title: 'Infraestructura & Cloud',
-            desc: 'Despliegues en AWS/Vercel, bases de datos Supabase y arquitecturas que no se caen.',
+            desc: 'Despliegues en servidores seguros, bases de datos SQL y arquitecturas que no se caen.',
             icon: 'cloud',
+            details: {
+              intro:
+                'Tu software vive en la nube. Nos aseguramos de que sea seguro, rápido y nunca se caiga, sin importar cuánto tráfico recibas.',
+              features: [
+                'Configuración AWS / Google Cloud',
+                'Bases de Datos MySQL/PostgreSQL',
+                'Docker y Kubernetes',
+                'Seguridad y Backups Automáticos',
+              ],
+              cta: 'Mejorar mi infraestructura',
+            },
           },
         ],
       },
@@ -140,6 +214,7 @@ export class Settings {
         ],
       },
       footer: {
+        // <--- CORRECCIÓN 2: Eliminado el 'notFound' interno redundante
         tagline: 'Construyendo el futuro digital con código de alto rendimiento.',
         rights: 'Todos los derechos reservados.',
         sections: { company: 'Compañía', legal: 'Legal' },
@@ -150,8 +225,8 @@ export class Settings {
           terms: 'Términos de Uso',
         },
       },
-      // --- SECCIÓN NOT FOUND (Que faltaba) ---
       notFound: {
+        // Esta es la correcta
         code: '404',
         title: 'Sistema Fuera de Línea',
         desc: 'La ruta que intentas explorar no existe o ha sido movida. Regresa a la base segura.',
@@ -166,38 +241,111 @@ export class Settings {
         blog: 'Blog',
         contact: 'Contact',
       },
-      hero: {
-        badge: 'Development Agency',
-        title_prefix: 'We Build Software that',
-        title_gradient: 'scales your business.',
-        subtitle:
-          'At JH Dev Agency we combine software engineering, AI automation, and strategic design. Just-in-Time delivery for global markets.',
-        cta_primary: 'Start Project',
-        cta_secondary: 'View Portfolio',
+      home: {
+        hero: {
+          badge: 'Development Agency',
+          title_prefix: 'We Build Software that',
+          title_gradient: 'scales your business.',
+          subtitle:
+            'At JH Dev Agency we combine software engineering, AI automation, and strategic design. Just-in-Time delivery for global markets.',
+          cta_primary: 'Start Project',
+          cta_secondary: 'View Portfolio',
+        },
+        expertise: {
+          label: 'EXPERTISE',
+          title: 'More than code, strategy.',
+          cards: [
+            {
+              title: 'Web Development',
+              desc: 'Ultra-fast sites and complex applications with scalable architectures.',
+            },
+            {
+              title: 'Automation & AI',
+              desc: 'Automate repetitive processes and sales with AI agents.',
+            },
+            {
+              title: 'SaaS Products',
+              desc: 'Full product development (MVP) ready for investment.',
+            },
+          ],
+        },
+        cta_banner: {
+          title: 'Have an idea in mind?',
+          desc: "Stop wasting time with slow solutions. Let's build something solid, scalable, and fast.",
+          btn: 'Talk to a Specialist',
+        },
       },
       services: {
         title: 'Our Capabilities',
         subtitle: 'Technical solutions designed for speed and scalability.',
         items: [
           {
+            slug: 'web-development',
             title: 'High-Performance Web Dev',
             desc: 'Ultra-fast sites with Next.js & Angular. 100/100 Google PageSpeed score guaranteed.',
             icon: 'code',
+            details: {
+              intro:
+                'We don\'t just make sites that "look good". We build platforms that load in milliseconds and convert visitors into customers.',
+              features: [
+                'Hybrid SPA/SSR Architecture',
+                'Advanced Technical SEO',
+                'Mobile First UI/UX Design',
+                'Headless CMS Integration',
+              ],
+              cta: 'Audit my site',
+            },
           },
           {
+            slug: 'ai-automation',
             title: 'Automation & AI',
             desc: 'WhatsApp Bots, AI Agents, and automated CRMs so your business sells 24/7 without you.',
             icon: 'cpu',
+            details: {
+              intro:
+                'AI is not the future, it is the present. We integrate LLM models (like GPT-4) directly into your business processes.',
+              features: [
+                '24/7 Customer Support Chatbots',
+                'Predictive Data Analysis',
+                'Invoicing & Email Automation',
+                'Autonomous Sales Agents',
+              ],
+              cta: 'Automate my business',
+            },
           },
           {
+            slug: 'saas-product',
             title: 'SaaS & Custom Apps',
             desc: 'We transform your idea into a complex digital product (like PayMind or CardFlow) market-ready.',
             icon: 'layers',
+            details: {
+              intro:
+                'We take your idea from napkin to launch. Specialists in scalable MVPs and multi-tenant architectures.',
+              features: [
+                'Robust Backend Development (Django/Node)',
+                'Admin Dashboards',
+                'Payment Integration (Stripe/PayPal)',
+                'Subscription Systems',
+              ],
+              cta: 'Quote my App',
+            },
           },
           {
+            slug: 'cloud-infrastructure',
             title: 'Infrastructure & Cloud',
-            desc: 'Deployments on AWS/Vercel, Supabase databases, and unbreakable architectures.',
+            desc: 'Deployments on secure servers, SQL databases, and unbreakable architectures.',
             icon: 'cloud',
+            details: {
+              intro:
+                'Your software lives in the cloud. We ensure it is secure, fast, and never goes down, no matter how much traffic you get.',
+              features: [
+                'AWS / Google Cloud Configuration',
+                'MySQL/PostgreSQL Databases',
+                'Docker & Kubernetes',
+                'Security & Automatic Backups',
+              ],
+              cta: 'Improve my infrastructure',
+            },
           },
         ],
       },
@@ -288,6 +436,7 @@ export class Settings {
         ],
       },
       footer: {
+        // <--- CORRECCIÓN 2: Limpieza también en inglés
         tagline: 'Building the digital future with high-performance code.',
         rights: 'All rights reserved.',
         sections: { company: 'Company', legal: 'Legal' },
@@ -298,7 +447,6 @@ export class Settings {
           terms: 'Terms of Use',
         },
       },
-      // --- SECCIÓN NOT FOUND (EN) ---
       notFound: {
         code: '404',
         title: 'System Offline',

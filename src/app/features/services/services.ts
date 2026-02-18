@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Settings } from '../../core/state/settings';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -120,7 +121,7 @@ import { Settings } from '../../core/state/settings';
                   <p class="flex-auto">{{ service.desc }}</p>
                   <p class="mt-6">
                     <a
-                      routerLink="/contact"
+                      [routerLink]="['/services', service.slug]"
                       class="text-sm font-semibold leading-6 text-sky-500 hover:text-sky-400 group-hover:translate-x-2 transition-transform inline-flex items-center gap-1"
                     >
                       Más información <span aria-hidden="true">→</span>

@@ -1,26 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-@import 'tailwindcss';
-
 @import 'tailwindcss';
 
 @theme {
-  /* Definimos tus colores de marca aquí para usarlos como variables */
-  --color-brand-primary: #0ea5e9; /* Sky 500 - Tu azul eléctrico */
-  --color-brand-dark: #09090b; /* Zinc 950 - Tu fondo oscuro */
-  --font-sans: 'Inter', sans-serif;
+  --color-brand-primary: #0ea5e9;
+  --color-brand-dark: #09090b;
 }
 
-/* Configuración base para el modo oscuro suave */
-:root {
-  color-scheme: light dark;
-}
+/* ⚡️ SOLUCIÓN MAESTRA:
+  Sobrescribimos la variante 'dark' para que solo funcione con la clase .dark
+  y no con la preferencia del sistema operativo.
+*/
+@variant dark (&:where(.dark, .dark *));
 
-html.dark {
-  background-color: var(--color-brand-dark);
-  color: white;
-}
+@layer base {
+  html {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
 
-/* Transiciones globales para el cambio de tema */
-body {
-  @apply transition-colors duration-300 ease-in-out;
+  body {
+    /* Por defecto (Light) */
+    @apply bg-white text-zinc-900;
+  }
+
+  /* Cuando activamos la clase .dark manual */
+  :root.dark body {
+    @apply bg-zinc-950 text-white;
+  }
 }

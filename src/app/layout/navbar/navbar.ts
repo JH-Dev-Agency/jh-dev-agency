@@ -1,6 +1,7 @@
-import { Component, signal, inject, PLATFORM_ID, effect } from '@angular/core';
+import { Component, signal, inject, effect, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Settings } from '../../core/state/settings';
 
 @Component({
   selector: 'app-navbar',
@@ -17,39 +18,67 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           >
             <span class="font-mono text-lg font-bold tracking-tighter">JH</span>
           </div>
-          <span class="text-lg font-bold tracking-tight text-zinc-900 dark:text-white font-sans">
-            Dev Studio
-          </span>
+          <span class="text-lg font-bold tracking-tight text-zinc-900 dark:text-white font-sans"
+            >Dev Agency</span
+          >
         </a>
 
         <div class="hidden md:flex md:items-center md:gap-8">
-          @for (item of menuItems(); track item.path) {
-            <a
-              [routerLink]="item.path"
-              routerLinkActive="text-sky-500 font-semibold"
-              [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-              class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors"
-            >
-              {{ item.label }}
-            </a>
-          }
+          <a
+            routerLink="/"
+            routerLinkActive="text-sky-500 font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors cursor-pointer"
+          >
+            {{ settings.text().nav.home }}
+          </a>
+
+          <a
+            routerLink="/services"
+            routerLinkActive="text-sky-500 font-semibold"
+            class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors cursor-pointer"
+          >
+            {{ settings.text().nav.services }}
+          </a>
+
+          <a
+            routerLink="/portfolio"
+            routerLinkActive="text-sky-500 font-semibold"
+            class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors cursor-pointer"
+          >
+            {{ settings.text().nav.portfolio }}
+          </a>
+
+          <a
+            routerLink="/blog"
+            routerLinkActive="text-sky-500 font-semibold"
+            class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors cursor-pointer"
+          >
+            {{ settings.text().nav.blog }}
+          </a>
+
+          <a
+            routerLink="/contact"
+            routerLinkActive="text-sky-500 font-semibold"
+            class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors cursor-pointer"
+          >
+            {{ settings.text().nav.contact }}
+          </a>
         </div>
 
         <div class="flex items-center gap-3">
           <button
-            (click)="toggleLang()"
-            class="hidden md:flex items-center justify-center h-8 px-3 rounded-md bg-zinc-100 dark:bg-zinc-800 text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors uppercase tracking-wide"
-            aria-label="Change Language"
+            (click)="settings.toggleLang()"
+            class="flex items-center justify-center h-9 px-3 rounded-md text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xs font-bold uppercase w-10 cursor-pointer"
           >
-            {{ currentLang() }}
+            {{ settings.language() }}
           </button>
 
           <button
-            (click)="toggleTheme()"
-            class="flex items-center justify-center w-9 h-9 rounded-full text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500/50"
-            aria-label="Toggle Theme"
+            (click)="settings.toggleTheme()"
+            class="flex items-center justify-center h-9 w-9 rounded-md text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
           >
-            @if (isDark()) {
+            @if (settings.theme() === 'dark') {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -91,8 +120,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           </button>
 
           <button
-            (click)="toggleMenu()"
-            class="md:hidden p-2 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-md"
+            (click)="isOpen.set(!isOpen())"
+            class="md:hidden flex items-center justify-center h-9 w-9 rounded-md text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,122 +144,45 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
       @if (isOpen()) {
         <div
-          class="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl px-4 py-6 shadow-xl animate-in slide-in-from-top-2 fade-in duration-200"
+          class="md:hidden bg-white dark:bg-zinc-950 p-4 border-t dark:border-zinc-800 flex flex-col space-y-2"
         >
-          <div class="flex flex-col space-y-4">
-            @for (item of menuItems(); track item.path) {
-              <a
-                [routerLink]="item.path"
-                (click)="closeMenu()"
-                routerLinkActive="text-sky-500 bg-sky-50/50 dark:bg-sky-900/10"
-                class="block px-4 py-2 rounded-lg text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
-              >
-                {{ item.label }}
-              </a>
-            }
-
-            <div
-              class="pt-6 mt-2 border-t border-zinc-100 dark:border-zinc-800 flex justify-between items-center px-4"
-            >
-              <span class="text-sm font-medium text-zinc-500">Idioma / Language</span>
-              <button
-                (click)="toggleLang()"
-                class="px-3 py-1 rounded bg-zinc-100 dark:bg-zinc-800 text-sm font-bold uppercase text-zinc-700 dark:text-zinc-300"
-              >
-                {{ currentLang() }}
-              </button>
-            </div>
-          </div>
+          <a
+            routerLink="/"
+            (click)="isOpen.set(false)"
+            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >{{ settings.text().nav.home }}</a
+          >
+          <a
+            routerLink="/services"
+            (click)="isOpen.set(false)"
+            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >{{ settings.text().nav.services }}</a
+          >
+          <a
+            routerLink="/portfolio"
+            (click)="isOpen.set(false)"
+            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >{{ settings.text().nav.portfolio }}</a
+          >
+          <a
+            routerLink="/blog"
+            (click)="isOpen.set(false)"
+            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >{{ settings.text().nav.blog }}</a
+          >
+          <a
+            routerLink="/contact"
+            (click)="isOpen.set(false)"
+            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >{{ settings.text().nav.contact }}</a
+          >
         </div>
       }
     </nav>
   `,
+  // Nota: Hemos eliminado el array 'styles' para evitar el error de @apply
 })
 export class Navbar {
-  private platformId = inject(PLATFORM_ID);
-
-  // --- SIGNALS (ESTADO REACTIVO) ---
+  public settings = inject(Settings);
   readonly isOpen = signal(false);
-  readonly isDark = signal(false);
-  readonly currentLang = signal<'es' | 'en'>('es');
-
-  // Configuración del Menú
-  readonly menuItems = signal([
-    { label: 'Inicio', path: '/' },
-    { label: 'Servicios', path: '/services' },
-    { label: 'Portafolio', path: '/portfolio' },
-    { label: 'Blog', path: '/blog' },
-    { label: 'Contacto', path: '/contact' },
-  ]);
-
-  constructor() {
-    // Effect: Reacciona automáticamente cuando cambia isDark()
-    effect(() => {
-      if (isPlatformBrowser(this.platformId)) {
-        const html = document.documentElement;
-        if (this.isDark()) {
-          html.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          html.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }
-      }
-    });
-
-    // Inicialización del tema al cargar (Solo navegador)
-    if (isPlatformBrowser(this.platformId)) {
-      const savedTheme = localStorage.getItem('theme');
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      // Si hay guardado 'dark' o no hay nada pero el sistema es dark -> true
-      if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
-        this.isDark.set(true);
-      }
-    }
-  }
-
-  // --- MÉTODOS PÚBLICOS ---
-
-  toggleMenu() {
-    this.isOpen.update((v) => !v);
-  }
-
-  closeMenu() {
-    this.isOpen.set(false);
-  }
-
-  toggleTheme() {
-    this.isDark.update((v) => !v);
-  }
-
-  toggleLang() {
-    this.currentLang.update((l) => {
-      const newLang = l === 'es' ? 'en' : 'es';
-      // Aquí actualizaremos los labels del menú dinámicamente más adelante
-      this.updateMenuLabels(newLang);
-      return newLang;
-    });
-  }
-
-  // Pequeño helper para simular el cambio de idioma en el menú por ahora
-  private updateMenuLabels(lang: 'es' | 'en') {
-    if (lang === 'en') {
-      this.menuItems.set([
-        { label: 'Home', path: '/' },
-        { label: 'Services', path: '/services' },
-        { label: 'Portfolio', path: '/portfolio' },
-        { label: 'Blog', path: '/blog' },
-        { label: 'Contact', path: '/contact' },
-      ]);
-    } else {
-      this.menuItems.set([
-        { label: 'Inicio', path: '/' },
-        { label: 'Servicios', path: '/services' },
-        { label: 'Portafolio', path: '/portfolio' },
-        { label: 'Blog', path: '/blog' },
-        { label: 'Contacto', path: '/contact' },
-      ]);
-    }
-  }
 }

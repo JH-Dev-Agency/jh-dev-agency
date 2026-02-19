@@ -1,12 +1,13 @@
 import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
-import { provideServerRendering, withRoutes } from '@angular/ssr';
+import { provideServerRendering } from '@angular/platform-server';
 import { appConfig } from './app.config';
-import { serverRoutes } from './app.routes.server';
+// Quitamos la importación de serverRoutes que daba problemas aquí
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    provideServerRendering(withRoutes(serverRoutes))
-  ]
+    provideServerRendering(),
+    // provideServerRouting eliminado para evitar el error TS2724
+  ],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

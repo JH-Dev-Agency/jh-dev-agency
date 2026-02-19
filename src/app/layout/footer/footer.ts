@@ -25,7 +25,7 @@ import { Settings } from '../../core/state/settings';
               <span
                 class="text-lg font-bold tracking-tight text-zinc-900 dark:text-white font-sans"
               >
-                Dev Studio
+                {{ settings.text().brandShort }}
               </span>
             </a>
             <p class="text-sm leading-6 text-zinc-600 dark:text-zinc-400 max-w-xs">
@@ -126,7 +126,7 @@ import { Settings } from '../../core/state/settings';
 
         <div class="mt-16 border-t border-zinc-200 dark:border-zinc-800 pt-8 sm:mt-20 lg:mt-24">
           <p class="text-xs leading-5 text-zinc-500 dark:text-zinc-400">
-            &copy; {{ currentYear() }} JH Dev Studio. {{ settings.text().footer.rights }}
+            &copy; {{ currentYear() }} {{ settings.text().brandName }}. {{ settings.text().footer.rights }}
           </p>
         </div>
       </div>

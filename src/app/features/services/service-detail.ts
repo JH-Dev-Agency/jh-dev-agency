@@ -25,7 +25,7 @@ import { map } from 'rxjs/operators';
                 <p
                   class="text-base font-semibold leading-7 text-sky-500 uppercase tracking-wide mb-2"
                 >
-                  <a routerLink="/services" class="hover:underline">Services</a> / {{ s.title }}
+                  <a routerLink="/services" class="hover:underline">{{ settings.text().nav.services }}</a> / {{ s.title }}
                 </p>
 
                 <h1
@@ -36,6 +36,11 @@ import { map } from 'rxjs/operators';
                 <p class="mt-6 text-xl leading-8 text-zinc-700 dark:text-zinc-300">
                   {{ s.details.intro }}
                 </p>
+                @if (s.details['proof_line']) {
+                  <p class="mt-4 text-sm text-zinc-500 dark:text-zinc-500 italic border-l-2 border-sky-500/40 pl-4">
+                    {{ s.details['proof_line'] }}
+                  </p>
+                }
               </div>
             </div>
           </div>
@@ -118,13 +123,18 @@ import { map } from 'rxjs/operators';
                   }
                 </ul>
 
-                <div class="mt-10 flex items-center gap-x-6">
+                <div class="mt-10 flex flex-col gap-2">
                   <a
                     routerLink="/contact"
-                    class="rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+                    class="inline-flex w-fit rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
                   >
                     {{ s.details.cta }}
                   </a>
+                  @if (s.details['cta_subline']) {
+                    <p class="text-sm text-zinc-500 dark:text-zinc-500">
+                      {{ s.details['cta_subline'] }}
+                    </p>
+                  }
                 </div>
               </div>
             </div>

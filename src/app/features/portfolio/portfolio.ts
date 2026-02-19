@@ -12,7 +12,7 @@ import { Settings } from '../../core/state/settings';
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center mb-16">
           <h2 class="text-base font-semibold leading-7 text-sky-500 uppercase tracking-widest">
-            Portfolio
+            {{ settings.text().portfolio.label }}
           </h2>
           <p
             class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
@@ -40,7 +40,7 @@ import { Settings } from '../../core/state/settings';
                   <span
                     class="text-zinc-500 font-mono text-xl group-hover:text-sky-500 transition-colors"
                   >
-                    {{ project.title }} Preview
+                    {{ project.title }} {{ settings.text().portfolio.preview_suffix }}
                   </span>
                 </div>
 
@@ -50,7 +50,16 @@ import { Settings } from '../../core/state/settings';
               </div>
 
               <div class="max-w-xl">
-                <div class="mt-8 flex items-center gap-x-4 text-xs">
+                @if (project.category) {
+                  <p class="mt-8 text-xs font-medium uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                    {{ project.category }}
+                  </p>
+                }
+                <div
+                  class="flex items-center gap-x-4 text-xs"
+                  [class.mt-2]="project.category"
+                  [class.mt-8]="!project.category"
+                >
                   @for (tag of project.tags; track tag) {
                     <span
                       class="relative z-10 rounded-full bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
@@ -69,9 +78,14 @@ import { Settings } from '../../core/state/settings';
                       {{ project.title }}
                     </a>
                   </h3>
-                  <p class="mt-5 line-clamp-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                  <p class="mt-5 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
                     {{ project.desc }}
                   </p>
+                  @if (project.result) {
+                    <p class="mt-2 text-sm leading-6 text-zinc-500 dark:text-zinc-500">
+                      {{ project.result }}
+                    </p>
+                  }
                 </div>
               </div>
             </article>

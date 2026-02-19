@@ -23,6 +23,11 @@ import { Settings } from '../../core/state/settings';
           <p class="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-300">
             {{ settings.text().contact.subtitle }}
           </p>
+          @if (settings.text().contact.subtitle_extra) {
+            <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-500">
+              {{ settings.text().contact.subtitle_extra }}
+            </p>
+          }
 
           <dl class="mt-10 space-y-6 text-base leading-7 text-zinc-600 dark:text-zinc-400">
             <div class="flex gap-x-4 items-center">
@@ -48,8 +53,9 @@ import { Settings } from '../../core/state/settings';
                 </div>
               </dt>
               <dd>
+                <p class="font-medium text-zinc-900 dark:text-white">{{ settings.text().contact.info.email_label }}</p>
                 <a
-                  class="hover:text-sky-500 transition-colors font-medium"
+                  class="hover:text-sky-500 transition-colors text-zinc-600 dark:text-zinc-400"
                   href="mailto:contact@jhdev.studio"
                   >contact&#64;jhdev.studio</a
                 >
@@ -78,11 +84,15 @@ import { Settings } from '../../core/state/settings';
                   </svg>
                 </div>
               </dt>
-              <dd class="font-medium">{{ settings.text().contact.info.location }}</dd>
+              <dd>
+                <p class="font-medium text-zinc-900 dark:text-white">{{ settings.text().contact.info.location_label }}</p>
+                <p class="text-zinc-600 dark:text-zinc-400">{{ settings.text().contact.info.location }}</p>
+              </dd>
             </div>
 
-            <div class="flex gap-x-4 items-center">
+            <div class="flex gap-x-4 items-start">
               <dt class="flex-none">
+                <span class="sr-only">{{ settings.text().contact.info.availability_label }}</span>
                 <div
                   class="h-10 w-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 relative"
                 >
@@ -109,12 +119,16 @@ import { Settings } from '../../core/state/settings';
                 </div>
               </dt>
               <dd>
-                <p class="font-semibold text-zinc-900 dark:text-white">
-                  {{ settings.text().contact.info.availability }}
-                </p>
+                <p class="font-medium text-zinc-900 dark:text-white">{{ settings.text().contact.info.availability_label }}</p>
+                <p class="text-zinc-600 dark:text-zinc-400">{{ settings.text().contact.info.availability }}</p>
               </dd>
             </div>
           </dl>
+          @if (settings.text().contact.info.scope_global) {
+            <p class="mt-6 text-sm text-zinc-500 dark:text-zinc-500">
+              {{ settings.text().contact.info.scope_global }}
+            </p>
+          }
         </div>
 
         <form
@@ -169,6 +183,9 @@ import { Settings } from '../../core/state/settings';
                   <option>Otro</option>
                 </select>
               </div>
+              @if (settings.text().contact.form.type_help) {
+                <p class="mt-1.5 text-xs text-zinc-500 dark:text-zinc-500">{{ settings.text().contact.form.type_help }}</p>
+              }
             </div>
 
             <div>
@@ -187,6 +204,9 @@ import { Settings } from '../../core/state/settings';
                   <option>Por definir</option>
                 </select>
               </div>
+              @if (settings.text().contact.form.budget_help) {
+                <p class="mt-1.5 text-xs text-zinc-500 dark:text-zinc-500">{{ settings.text().contact.form.budget_help }}</p>
+              }
             </div>
 
             <div class="sm:col-span-2">
@@ -197,6 +217,7 @@ import { Settings } from '../../core/state/settings';
                 <textarea
                   rows="4"
                   formControlName="message"
+                  [attr.placeholder]="settings.text().contact.form.message_placeholder || null"
                   class="block w-full rounded-md border-0 bg-white/70 dark:bg-zinc-800/70 px-3.5 py-2 text-zinc-900 dark:text-white shadow-sm ring-1 ring-inset ring-zinc-300 dark:ring-zinc-700 placeholder:text-zinc-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6 transition-all"
                 ></textarea>
               </div>
@@ -216,6 +237,11 @@ import { Settings } from '../../core/state/settings';
                 >→</span
               >
             </button>
+            @if (settings.text().contact.form.after_submit) {
+              <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-500 text-center">
+                {{ settings.text().contact.form.after_submit }}
+              </p>
+            }
           </div>
         </form>
       </div>

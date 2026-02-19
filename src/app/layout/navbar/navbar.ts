@@ -142,42 +142,73 @@ import { Settings } from '../../core/state/settings';
         </div>
       </div>
 
-      @if (isOpen()) {
+      <div
+        class="md:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        [class.max-h-0]="!isOpen()"
+        [class.opacity-0]="!isOpen()"
+        [class.max-h-80]="isOpen()"
+        [class.opacity-100]="isOpen()"
+      >
         <div
-          class="md:hidden bg-white dark:bg-zinc-950 p-4 border-t dark:border-zinc-800 flex flex-col space-y-2"
+          class="bg-white dark:bg-zinc-950 p-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-col space-y-1"
         >
           <a
             routerLink="/"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
+            [class.opacity-0]="!isOpen()"
+            [class.translate-y-[-6px]]="!isOpen()"
+            [class.opacity-100]="isOpen()"
+            [class.translate-y-0]="isOpen()"
+            [style.transitionDelay]="isOpen() ? '50ms' : '0ms'"
             >{{ settings.text().nav.home }}</a
           >
           <a
             routerLink="/services"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
+            [class.opacity-0]="!isOpen()"
+            [class.translate-y-[-6px]]="!isOpen()"
+            [class.opacity-100]="isOpen()"
+            [class.translate-y-0]="isOpen()"
+            [style.transitionDelay]="isOpen() ? '90ms' : '0ms'"
             >{{ settings.text().nav.services }}</a
           >
           <a
             routerLink="/portfolio"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
+            [class.opacity-0]="!isOpen()"
+            [class.translate-y-[-6px]]="!isOpen()"
+            [class.opacity-100]="isOpen()"
+            [class.translate-y-0]="isOpen()"
+            [style.transitionDelay]="isOpen() ? '130ms' : '0ms'"
             >{{ settings.text().nav.portfolio }}</a
           >
           <a
             routerLink="/blog"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
+            [class.opacity-0]="!isOpen()"
+            [class.translate-y-[-6px]]="!isOpen()"
+            [class.opacity-100]="isOpen()"
+            [class.translate-y-0]="isOpen()"
+            [style.transitionDelay]="isOpen() ? '170ms' : '0ms'"
             >{{ settings.text().nav.blog }}</a
           >
           <a
             routerLink="/contact"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2 rounded-md text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
+            [class.opacity-0]="!isOpen()"
+            [class.translate-y-[-6px]]="!isOpen()"
+            [class.opacity-100]="isOpen()"
+            [class.translate-y-0]="isOpen()"
+            [style.transitionDelay]="isOpen() ? '210ms' : '0ms'"
             >{{ settings.text().nav.contact }}</a
           >
         </div>
-      }
+      </div>
     </nav>
   `,
   // Nota: Hemos eliminado el array 'styles' para evitar el error de @apply

@@ -17,6 +17,11 @@ import { Settings } from '../../core/state/settings';
           <p class="mt-2 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             {{ settings.text().blog.subtitle }}
           </p>
+          @if (settings.text().blog.author_line) {
+            <p class="mt-4 text-sm text-zinc-500 dark:text-zinc-500">
+              {{ settings.text().blog.author_line }}
+            </p>
+          }
         </div>
 
         <div
@@ -42,9 +47,14 @@ import { Settings } from '../../core/state/settings';
                     {{ post.title }}
                   </a>
                 </h3>
-                <p class="mt-5 line-clamp-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                <p class="mt-5 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
                   {{ post.excerpt }}
                 </p>
+                @if (post.benefit) {
+                  <p class="mt-2 text-sm leading-6 text-zinc-500 dark:text-zinc-500">
+                    {{ post.benefit }}
+                  </p>
+                }
               </div>
 
               <div class="relative mt-8 flex items-center gap-x-4">

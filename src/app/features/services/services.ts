@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center mb-16">
           <h2 class="text-base font-semibold leading-7 text-sky-500 uppercase tracking-widest">
-            JH Dev Agency
+            {{ settings.text().brandName }}
           </h2>
           <p
             class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
@@ -119,12 +119,17 @@ import { RouterLink } from '@angular/router';
                   class="mt-4 flex flex-auto flex-col text-base leading-7 text-zinc-600 dark:text-zinc-400"
                 >
                   <p class="flex-auto">{{ service.desc }}</p>
+                  @if (service.use_case) {
+                    <p class="mt-3 text-sm italic text-zinc-500 dark:text-zinc-500 border-l-2 border-sky-500/30 pl-3">
+                      {{ service.use_case }}
+                    </p>
+                  }
                   <p class="mt-6">
                     <a
                       [routerLink]="['/services', service.slug]"
                       class="text-sm font-semibold leading-6 text-sky-500 hover:text-sky-400 group-hover:translate-x-2 transition-transform inline-flex items-center gap-1"
                     >
-                      Más información <span aria-hidden="true">→</span>
+                      {{ settings.text().services.more_info }} <span aria-hidden="true">→</span>
                     </a>
                   </p>
                 </dd>

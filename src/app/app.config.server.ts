@@ -1,10 +1,13 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideServerRendering } from '@angular/platform-server';
-import { appConfig } from './app.config';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
-const serverConfig: ApplicationConfig = {
-  providers: [provideServerRendering()],
+export const config: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
+    provideRouter(routes),
+    provideServerRendering(),
+  ],
 };
-
-// Esta es la línea que el error dice que no encuentra:
-export const config = mergeApplicationConfig(appConfig, serverConfig);

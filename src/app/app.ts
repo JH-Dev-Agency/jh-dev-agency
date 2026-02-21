@@ -1,13 +1,14 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, afterNextRender } from '@angular/core'; // Añadimos afterNextRender
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './layout/navbar/navbar';
-import { Footer } from './layout/footer/footer'; // <--- IMPORTAR
+import { Footer } from './layout/footer/footer';
 import { Settings } from './core/state/settings';
+import { inject as injectAnalytics } from '@vercel/analytics'; // Importamos con alias
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, Footer], // <--- AGREGAR AQUÍ
+  imports: [RouterOutlet, Navbar, Footer],
   template: `
     <app-navbar />
 
@@ -22,4 +23,14 @@ import { Settings } from './core/state/settings';
 })
 export class App {
   settings = inject(Settings);
+
+  constructor() {
+    /**
+     * afterNextRender asegura que las analíticas no se ejecuten en el servidor (SSR)
+     * y que esperen a que el primer renderizado (incluyendo el tema oscuro) esté listo.
+     */
+    afterNextRender(() => {
+      injectAnalytics();
+    });
+  }
 }

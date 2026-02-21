@@ -1,9 +1,9 @@
-import { Component, inject, afterNextRender } from '@angular/core'; // Añadimos afterNextRender
+import { Component, inject, afterNextRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './layout/navbar/navbar';
 import { Footer } from './layout/footer/footer';
 import { Settings } from './core/state/settings';
-import { inject as injectAnalytics } from '@vercel/analytics'; // Importamos con alias
+import { inject as injectAnalytics } from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +26,9 @@ export class App {
 
   constructor() {
     /**
-     * afterNextRender asegura que las analíticas no se ejecuten en el servidor (SSR)
-     * y que esperen a que el primer renderizado (incluyendo el tema oscuro) esté listo.
+     * Initialize Vercel Web Analytics
+     * afterNextRender ensures analytics only run on the client (not during SSR)
+     * and wait until the first render is complete
      */
     afterNextRender(() => {
       injectAnalytics();

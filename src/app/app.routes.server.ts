@@ -1,17 +1,17 @@
-// app.routes.server.ts
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
+// v2 - all routes SSR
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'services/:slug',
-    renderMode: RenderMode.Server, // ← SSR en tiempo real
+    renderMode: RenderMode.Server,
   },
   {
     path: 'blog/:id',
-    renderMode: RenderMode.Server, // ← SSR en tiempo real
+    renderMode: RenderMode.Server,
   },
   {
     path: '**',
-    renderMode: RenderMode.Server, // ← todo SSR
+    renderMode: RenderMode.Server,
   },
 ];

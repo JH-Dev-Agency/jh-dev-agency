@@ -182,6 +182,7 @@ import emailjs from '@emailjs/browser';
 export class Contact {
   public settings = inject(Settings);
   private fb = inject(FormBuilder);
+  showSuccess = signal(false);
 
   isSending = signal(false);
 
@@ -195,27 +196,34 @@ export class Contact {
   });
 
   async onSubmit() {
-    if (this.contactForm.value.company) return;
+    if (this.contactForm.invalid) return;
 
-    if (this.contactForm.valid) {
-      this.isSending.set(true);
+    this.isSending.set(true);
 
-      try {
-        await emailjs.send(
-          'service_cw0hn44',
-          'template_06zvdt9',
-          this.contactForm.value,
-          'g0x3v-UoKpZm7OTjm',
-        );
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.contactForm.value),
+      });
 
-        this.contactForm.reset({
-          type: 'Desarrollo Web',
-          budget: '$500 – $1,500 USD',
-        });
-      } catch (error) {
-        console.error(error);
-      }
+      if (!res.ok) throw new Error();
 
+      this.showSuccess.set(true);
+
+      this.contactForm.reset({
+        type: 'Desarrollo Web',
+        budget: '< $1,000 USD',
+      });
+
+      setTimeout(() => this.showSuccess.set(false), 5000);
+    } catch (error) {
+      console.error(error);
+
+      alert('Error sending message');
+    } finally {
       this.isSending.set(false);
     }
   }

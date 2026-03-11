@@ -1,17 +1,22 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
-// v2 - all routes SSR
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'services/:slug',
-    renderMode: RenderMode.Server,
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return []; // ← array vacío, no genera nada
+    },
   },
   {
     path: 'blog/:id',
-    renderMode: RenderMode.Server,
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return []; // ← array vacío, no genera nada
+    },
   },
   {
     path: '**',
-    renderMode: RenderMode.Server,
+    renderMode: RenderMode.Prerender,
   },
 ];

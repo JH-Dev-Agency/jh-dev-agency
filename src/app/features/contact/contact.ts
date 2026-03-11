@@ -28,12 +28,6 @@ import { Settings } from '../../core/state/settings';
           <div class="mt-10 space-y-6 text-zinc-600 dark:text-zinc-400">
             <div class="flex items-center gap-3">
               <div class="p-2 rounded-lg bg-sky-500/10 text-sky-500">✉️</div>
-              <div>
-                <p class="font-medium text-zinc-900 dark:text-white">Email</p>
-                <a href="mailto:hello@jhdevagency.com" class="hover:text-sky-500">
-                  hello@jhdevagency.com
-                </a>
-              </div>
             </div>
 
             <div class="flex items-center gap-3">

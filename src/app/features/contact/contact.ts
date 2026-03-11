@@ -40,7 +40,7 @@ import emailjs from '@emailjs/browser';
             <div class="flex items-center gap-3">
               <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-500">💬</div>
               <a
-                href="https://wa.me/5212220000000"
+                href="https://wa.me/522464637426"
                 target="_blank"
                 class="text-sm font-medium hover:text-emerald-500 transition"
               >

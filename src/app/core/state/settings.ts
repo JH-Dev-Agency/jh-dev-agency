@@ -22,15 +22,15 @@ export class Settings {
       },
       home: {
         hero: {
-          badge: 'Agencia de desarrollo · Alto rendimiento',
-          title_prefix: 'Software que acelera tu negocio',
-          title_gradient: 'Menos tiempo perdido. Más ventas. Menos errores.',
+          badge: 'Ingeniería de software · Alto rendimiento',
+          title_prefix: 'Software que impulsa tu negocio',
+          title_gradient: 'Menos trabajo manual. Más ventas. Más control.',
           subtitle:
-            'En JH Dev Agency construimos webs que cargan al instante, automatizamos lo repetitivo con IA y llevamos tu producto SaaS desde la idea hasta un MVP listo para invertir. Entregas claras y a tiempo.',
+            'En JH Dev Agency desarrollamos software para negocios que quieren crecer: webs rápidas que convierten, automatización con IA y productos SaaS listos para escalar.',
           cta_primary: 'Agendar una llamada',
           cta_secondary: 'Ver proyectos',
         },
-        stack_label: 'Construido con tecnologías de alto rendimiento',
+        stack_label: 'Tecnología moderna para software rápido y escalable',
         expertise: {
           label: 'Servicios',
           title: 'Soluciones que se traducen en resultados',
@@ -38,49 +38,49 @@ export class Settings {
           cards: [
             {
               title: 'Desarrollo Web',
-              desc: 'Webs y aplicaciones que cargan en segundos y convierten mejor. Menos rebote, más leads y una imagen seria para tu consultorio o negocio.',
+              desc: 'Webs rápidas y profesionales que convierten visitantes en clientes. Mejor posicionamiento en Google, menos rebote y más consultas desde internet.',
               bullets: [
-                'Sitios ultrarrápidos que mejoran tu posicionamiento en Google y reducen la tasa de rebote.',
-                'Ejemplo: clínica o negocio local con web profesional que capta citas y consultas sin depender solo de redes sociales.',
+                'Sitios optimizados para velocidad, SEO y conversión.',
+                'Ejemplo: clínica o negocio local que empieza a recibir citas y consultas desde su web.',
               ],
             },
             {
               title: 'Automatización e IA',
-              desc: 'Menos horas en tareas repetitivas y más tiempo para lo que importa. Reservas, recordatorios, respuestas a clientes y ventas asistidas por IA, sin que tengas que estar detrás de la pantalla.',
+              desc: 'Automatizamos tareas repetitivas para que tu negocio funcione incluso cuando no estás frente a la pantalla.',
               bullets: [
-                'Automatización de citas, recordatorios y seguimiento: menos no-shows y más control de tu agenda.',
-                'Ejemplo: consultorio o negocio que atiende consultas y reservas 24/7 con bots y agentes de IA.',
+                'Automatización de citas, recordatorios y respuestas a clientes.',
+                'Ejemplo: consultorio o negocio que atiende consultas y reservas 24/7.',
               ],
             },
             {
               title: 'Productos SaaS',
-              desc: 'Tu idea convertida en producto digital listo para usuarios e inversión. MVP con arquitectura sólida, panel de administración y flujos de pago, para que puedas validar y escalar sin rehacer todo.',
+              desc: 'Transformamos tu idea en un producto digital listo para usuarios e inversión.',
               bullets: [
-                'MVP listo para recibir usuarios y métricas claras para presentar a inversores o socios.',
-                'Ejemplo: startup o negocio con producto digital (suscripciones, gestión, herramientas) que necesita lanzar rápido y con calidad.',
+                'MVP sólido con panel de administración y sistema de pagos.',
+                'Ejemplo: startup que necesita lanzar rápido para validar su producto.',
               ],
             },
           ],
         },
         proof_social: {
-          title: 'Confiado por negocios que priorizan resultados',
+          title: 'Ingeniería enfocada en resultados',
           supporting_text:
-            'Trabajamos con consultorios privados, negocios locales con ambición de crecer y equipos que están construyendo su primer producto SaaS. Ingeniería seria, sin humo.',
+            'Trabajamos con negocios que quieren crecer usando software: consultorios, negocios locales y startups que necesitan soluciones sólidas y escalables.',
           cases: [
-            'Clínica privada — Web profesional + automatización de citas y recordatorios → +40% de reservas en 3 meses.',
-            'Negocio local — Tienda online rápida + integración de pagos → menos errores en pedidos y más ventas desde la web.',
-            'Startup SaaS — MVP de producto con panel de administración y suscripciones → listo para primeros usuarios e inversión en 12 semanas.',
+            'Clínica privada — Web profesional + automatización de citas → +40% reservas en 3 meses.',
+            'Negocio local — Tienda online rápida + pagos integrados → menos errores y más ventas.',
+            'Startup SaaS — MVP con panel de administración y suscripciones → listo para primeros usuarios en 12 semanas.',
           ],
           why_us:
-            'Ingeniería de alto rendimiento: entregas a tiempo, código mantenible y enfoque en lo que impacta tu negocio — más ventas, menos horas manuales, más control.',
+            'Código mantenible, arquitectura sólida y entregas claras. Sin humo ni promesas vacías.',
         },
         cta_banner: {
-          title: '¿Listo para dar el siguiente paso?',
-          desc: 'Cuéntanos tu proyecto en una llamada breve. Sin compromiso. Definimos alcance, plazos y siguiente paso en menos de 30 minutos.',
+          title: 'Hablemos de tu proyecto',
+          desc: 'Agenda una llamada de 30 minutos y revisamos cómo el software puede ayudarte a ahorrar tiempo, mejorar procesos o aumentar ventas.',
           btn: 'Agendar una llamada',
           terminal: [
             '> Conexión con JH Dev Agency establecida',
-            '> Análisis de requerimientos: en espera de tu llamada',
+            '> Análisis de requerimientos listo',
             '> Próximo paso: agendar reunión de 30 min',
           ],
         },
@@ -95,7 +95,8 @@ export class Settings {
             slug: 'web-development',
             title: 'Desarrollo Web de Alto Rendimiento',
             desc: 'Sitios y aplicaciones ultrarrápidos con stack moderno (Angular, Next.js) y puntuación óptima en Google. Menos rebote, mejor posicionamiento y más consultas o ventas desde la web. Tu consultorio o negocio se ve profesional y responde al instante.',
-            use_case: 'Clínica o negocio local que quiere captar citas y leads desde la web sin depender solo de redes o llamadas.',
+            use_case:
+              'Clínica o negocio local que quiere captar citas y leads desde la web sin depender solo de redes o llamadas.',
             icon: 'code',
             details: {
               intro:
@@ -117,7 +118,8 @@ export class Settings {
             slug: 'ai-automation',
             title: 'Automatización e IA',
             desc: 'Bots de WhatsApp, agentes de IA y flujos automatizados para reservas, recordatorios y respuestas a clientes. Tu negocio atiende 24/7 con menos horas manuales y menos errores de captura. Menos no-shows y menos llamadas repetitivas.',
-            use_case: 'Consultorio o negocio que necesita automatizar citas, recordatorios y primeras respuestas a pacientes o clientes.',
+            use_case:
+              'Consultorio o negocio que necesita automatizar citas, recordatorios y primeras respuestas a pacientes o clientes.',
             icon: 'cpu',
             details: {
               intro:
@@ -139,7 +141,8 @@ export class Settings {
             slug: 'saas-product',
             title: 'SaaS y Aplicaciones a Medida',
             desc: 'Transformamos tu idea en un producto digital listo para usuarios e inversión: plataformas de gestión, herramientas con suscripciones o flujos de pago. MVP con arquitectura sólida, panel de administración y métricas claras. Validás sin rehacer todo.',
-            use_case: 'Startup o negocio que lanza su primer producto digital (gestión, pagos, suscripciones) y necesita algo listo para crecer y presentar a inversores.',
+            use_case:
+              'Startup o negocio que lanza su primer producto digital (gestión, pagos, suscripciones) y necesita algo listo para crecer y presentar a inversores.',
             icon: 'layers',
             details: {
               intro:
@@ -161,7 +164,8 @@ export class Settings {
             slug: 'cloud-infrastructure',
             title: 'Infraestructura y Cloud',
             desc: 'Despliegues en servidores seguros, bases de datos SQL y arquitecturas que no se caen. Tu software corre rápido y estable; menos caídas, más confianza para tus clientes y para vos.',
-            use_case: 'Negocio o producto SaaS que ya tiene una aplicación y necesita que sea estable, segura y escalable sin preocuparse por servidores.',
+            use_case:
+              'Negocio o producto SaaS que ya tiene una aplicación y necesita que sea estable, segura y escalable sin preocuparse por servidores.',
             icon: 'cloud',
             details: {
               intro:
@@ -193,7 +197,8 @@ export class Settings {
             title: 'PayMind',
             category: 'Finanzas personales / Fintech',
             desc: 'Aplicación web para la gestión inteligente de tarjetas de crédito y control de deudas.',
-            result: 'Para usuarios con múltiples tarjetas que buscan mejor control de deudas y pagos a tiempo.',
+            result:
+              'Para usuarios con múltiples tarjetas que buscan mejor control de deudas y pagos a tiempo.',
             tags: ['Django', 'Python', 'Fintech'],
             image: 'assets/images/paymind-placeholder.jpg',
           },
@@ -202,7 +207,8 @@ export class Settings {
             title: 'PawMatch',
             category: 'Adopción / ONG',
             desc: 'Plataforma estilo "Tinder" para adopción y emparejamiento de mascotas.',
-            result: 'Para refugios y adoptantes: adopciones más rápidas y mejor emparejamiento entre mascotas y familias.',
+            result:
+              'Para refugios y adoptantes: adopciones más rápidas y mejor emparejamiento entre mascotas y familias.',
             tags: ['Next.js', 'Supabase', 'React'],
             image: 'assets/images/pawmatch-placeholder.jpg',
           },
@@ -211,7 +217,8 @@ export class Settings {
             title: 'CardFlow',
             category: 'Finanzas personales',
             desc: 'Suite financiera para seguimiento de flujo de efectivo y análisis de gastos personales.',
-            result: 'Para personas y equipos que necesitan claridad sobre gastos y flujo de caja sin depender de hojas de cálculo.',
+            result:
+              'Para personas y equipos que necesitan claridad sobre gastos y flujo de caja sin depender de hojas de cálculo.',
             tags: ['Angular', 'TypeScript', 'Tailwind'],
             image: 'assets/images/cardflow-placeholder.jpg',
           },
@@ -236,13 +243,17 @@ export class Settings {
           name: 'Nombre Completo',
           email: 'Correo Electrónico',
           type: 'Tipo de Proyecto',
-          type_help: 'Ej: sitio para tu consultorio, automatización de reservas, plataforma SaaS, etc.',
+          type_help:
+            'Ej: sitio para tu consultorio, automatización de reservas, plataforma SaaS, etc.',
           budget: 'Presupuesto Estimado',
-          budget_help: 'Si aún no tienes claro el presupuesto, elige "Por definir" y lo vemos en la llamada.',
+          budget_help:
+            'Si aún no tienes claro el presupuesto, elige "Por definir" y lo vemos en la llamada.',
           message: 'Detalles del Proyecto',
-          message_placeholder: 'Cuéntanos qué hace tu negocio, qué problema quieres resolver y en qué plazo te gustaría lanzar.',
+          message_placeholder:
+            'Cuéntanos qué hace tu negocio, qué problema quieres resolver y en qué plazo te gustaría lanzar.',
           btn: 'Solicitar llamada de 30 min',
-          after_submit: 'Te responderemos en menos de 24 horas con los siguientes pasos para tu proyecto.',
+          after_submit:
+            'Te responderemos en menos de 24 horas con los siguientes pasos para tu proyecto.',
         },
         info: {
           email_label: 'Escríbenos directamente',
@@ -296,7 +307,7 @@ export class Settings {
         ],
       },
       footer: {
-        tagline: 'Software de alto rendimiento para negocios que quieren crecer.',
+        tagline: 'Ingeniería de software para negocios que quieren crecer.',
         rights: 'Todos los derechos reservados.',
         sections: { company: 'Compañía', legal: 'Legal' },
         links: {
@@ -399,7 +410,8 @@ export class Settings {
             slug: 'web-development',
             title: 'High-Performance Web Development',
             desc: 'Ultra-fast sites and apps with modern stack (Angular, Next.js) and strong Google scores. Less bounce, better ranking, and more inquiries or sales from the web. Your practice or business looks professional and responds in an instant.',
-            use_case: 'Clinic or local business that wants to capture appointments and leads from the web without relying only on social or phone calls.',
+            use_case:
+              'Clinic or local business that wants to capture appointments and leads from the web without relying only on social or phone calls.',
             icon: 'code',
             details: {
               intro:
@@ -409,7 +421,7 @@ export class Settings {
               features: [
                 'Fast, scalable architecture (SPA/SSR): your site responds in an instant and handles more traffic without slowing down.',
                 'Technical SEO so you get found on Google when people search for your services or area, not just your name.',
-                'Mobile-first design so it works on any device and you don\'t lose leads who visit from their phone.',
+                "Mobile-first design so it works on any device and you don't lose leads who visit from their phone.",
                 'Integration with booking systems or contact forms so every visit can turn into an appointment or captured lead.',
               ],
               cta: 'Audit my site',
@@ -421,7 +433,8 @@ export class Settings {
             slug: 'ai-automation',
             title: 'Automation & AI',
             desc: 'WhatsApp bots, AI agents, and automated flows for bookings, reminders, and customer replies. Your business runs 24/7 with fewer manual hours and fewer data-entry errors. Fewer no-shows and fewer repetitive calls.',
-            use_case: 'Practice or business that needs to automate appointments, reminders, and first responses to patients or customers.',
+            use_case:
+              'Practice or business that needs to automate appointments, reminders, and first responses to patients or customers.',
             icon: 'cpu',
             details: {
               intro:
@@ -429,10 +442,10 @@ export class Settings {
               proof_line:
                 'Example: private practice that reduces missed appointments by 60% thanks to automatic WhatsApp reminders and answers basic inquiries 24/7 without the doctor being available.',
               features: [
-                'Chatbots and automatic replies 24/7 so no message goes unanswered, even when you\'re not online, and every inquiry turns into an appointment or lead.',
+                "Chatbots and automatic replies 24/7 so no message goes unanswered, even when you're not online, and every inquiry turns into an appointment or lead.",
                 'Appointment reminders via WhatsApp or email to reduce no-shows and better organize your day, without having to call each patient manually.',
                 'Invoicing and email automation so you can bill and send documents without wasting time on repetitive tasks that AI can do for you.',
-                'AI agents to qualify leads and follow up on sales automatically, identifying who\'s closer to hiring and prioritizing your time.',
+                "AI agents to qualify leads and follow up on sales automatically, identifying who's closer to hiring and prioritizing your time.",
               ],
               cta: 'Automate my business',
               cta_subline:
@@ -443,7 +456,8 @@ export class Settings {
             slug: 'saas-product',
             title: 'SaaS & Custom Applications',
             desc: 'We turn your idea into a digital product ready for users and investment: management platforms, tools with subscriptions or payment flows. MVP with solid architecture, admin panel, and clear metrics. Validate without rebuilding everything.',
-            use_case: 'Startup or business launching its first digital product (management, payments, subscriptions) and needing something ready to grow and present to investors.',
+            use_case:
+              'Startup or business launching its first digital product (management, payments, subscriptions) and needing something ready to grow and present to investors.',
             icon: 'layers',
             details: {
               intro:
@@ -453,7 +467,7 @@ export class Settings {
               features: [
                 'Robust backend (Django, Node) and scalable databases so your product is stable, secure, and can grow without crashes or performance issues when you have more users.',
                 'Admin panel so you control users, payments, and metrics without depending on a developer every time you need to make an adjustment or see how your business is doing.',
-                'Payment integration (Stripe, PayPal) and subscriptions so you can charge securely and automatically, without worrying about your customers\' data security.',
+                "Payment integration (Stripe, PayPal) and subscriptions so you can charge securely and automatically, without worrying about your customers' data security.",
                 'Architecture ready to grow with more users, new features, and marketing campaigns without having to rewrite the codebase when you want to scale.',
               ],
               cta: 'Quote my application',
@@ -464,17 +478,18 @@ export class Settings {
           {
             slug: 'cloud-infrastructure',
             title: 'Infrastructure & Cloud',
-            desc: 'Deployments on secure servers, SQL databases, and architectures that don\'t go down. Your software runs fast and stable; fewer outages, more trust from your customers and from you.',
-            use_case: 'Business or SaaS product that already has an application and needs it to be stable, secure, and scalable without worrying about servers.',
+            desc: "Deployments on secure servers, SQL databases, and architectures that don't go down. Your software runs fast and stable; fewer outages, more trust from your customers and from you.",
+            use_case:
+              'Business or SaaS product that already has an application and needs it to be stable, secure, and scalable without worrying about servers.',
             icon: 'cloud',
             details: {
               intro:
-                'Your software lives in the cloud. We make sure it\'s secure, fast, and stable: fewer outages during critical hours, better performance even as traffic grows, and automatic backups so you never lose data. Without you having to worry about servers or traffic, you focus on your business and we focus on making everything work.',
+                "Your software lives in the cloud. We make sure it's secure, fast, and stable: fewer outages during critical hours, better performance even as traffic grows, and automatic backups so you never lose data. Without you having to worry about servers or traffic, you focus on your business and we focus on making everything work.",
               proof_line:
                 'Example: booking platform that goes from crashing during peak hours to handling ad campaigns without interruptions, with automatic backups and monitoring that detects issues before they affect users.',
               features: [
                 'Configuration on AWS or Google Cloud so your site or app stays stable under high traffic and you can scale when needed without interruptions.',
-                'MySQL/PostgreSQL databases and automatic backups so your data is always backed up and you can recover it if something fails, without losing your customers\' information.',
+                "MySQL/PostgreSQL databases and automatic backups so your data is always backed up and you can recover it if something fails, without losing your customers' information.",
                 'Containers (Docker) and orchestration when needed so deployments are safer and repeatable, without surprises every time you update your application.',
                 'Security and monitoring so we detect problems before the customer complains, and you can sleep peacefully knowing everything is working correctly.',
               ],
@@ -497,7 +512,8 @@ export class Settings {
             title: 'PayMind',
             category: 'Personal finance / Fintech',
             desc: 'Web application for intelligent credit card management and debt control.',
-            result: 'For users with multiple cards who want better control over debt and on-time payments.',
+            result:
+              'For users with multiple cards who want better control over debt and on-time payments.',
             tags: ['Django', 'Python', 'Fintech'],
             image: 'assets/images/paymind-placeholder.jpg',
           },
@@ -506,7 +522,8 @@ export class Settings {
             title: 'PawMatch',
             category: 'Adoption / NGO',
             desc: '"Tinder-style" platform for pet adoption and matching.',
-            result: 'For shelters and adopters: faster adoptions and better matching between pets and families.',
+            result:
+              'For shelters and adopters: faster adoptions and better matching between pets and families.',
             tags: ['Next.js', 'Supabase', 'React'],
             image: 'assets/images/pawmatch-placeholder.jpg',
           },
@@ -515,7 +532,8 @@ export class Settings {
             title: 'CardFlow',
             category: 'Personal finance',
             desc: 'Financial suite for cash flow tracking and personal expense analysis.',
-            result: 'For individuals and teams who need clarity on spending and cash flow without spreadsheets.',
+            result:
+              'For individuals and teams who need clarity on spending and cash flow without spreadsheets.',
             tags: ['Angular', 'TypeScript', 'Tailwind'],
             image: 'assets/images/cardflow-placeholder.jpg',
           },
@@ -535,18 +553,20 @@ export class Settings {
         subtitle:
           "Tell us briefly about your project. We'll reply within 24 hours and, if it's a fit, we'll set up a 30-minute call to define scope, timeline, and next steps.",
         subtitle_extra:
-          'No commitment: it\'s an exploratory call to get to know each other and see if we can help.',
+          "No commitment: it's an exploratory call to get to know each other and see if we can help.",
         form: {
           name: 'Full Name',
           email: 'Email Address',
           type: 'Project Type',
           type_help: 'E.g. site for your practice, booking automation, SaaS platform, etc.',
           budget: 'Estimated Budget',
-          budget_help: 'If you\'re not sure about budget yet, choose "To be defined" and we\'ll discuss it on the call.',
+          budget_help:
+            'If you\'re not sure about budget yet, choose "To be defined" and we\'ll discuss it on the call.',
           message: 'Project Details',
-          message_placeholder: 'Tell us what your business does, what problem you want to solve, and when you\'d like to launch.',
+          message_placeholder:
+            "Tell us what your business does, what problem you want to solve, and when you'd like to launch.",
           btn: 'Request 30-min call',
-          after_submit: 'We\'ll reply within 24 hours with next steps for your project.',
+          after_submit: "We'll reply within 24 hours with next steps for your project.",
         },
         info: {
           email_label: 'Email us directly',

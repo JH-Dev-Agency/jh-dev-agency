@@ -15,15 +15,30 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": { "entry": "src/server.ts" }
+
+            "outputMode": "static",
+
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
-              "budgets": [{ "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" }],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                }
+              ],
               "outputHashing": "all",
               "prerender": false
             },
@@ -38,8 +53,12 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": { "buildTarget": "jh-dev-studio:build:production" },
-            "development": { "buildTarget": "jh-dev-studio:build:development" }
+            "production": {
+              "buildTarget": "jh-dev-agency:build:production"
+            },
+            "development": {
+              "buildTarget": "jh-dev-agency:build:development"
+            }
           },
           "defaultConfiguration": "development"
         }

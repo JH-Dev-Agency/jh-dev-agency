@@ -13,21 +13,16 @@ import { Contact } from './features/contact/contact';
 import { NotFound } from './features/not-found/not-found';
 
 export const routes: Routes = [
-  // Home
   { path: '', component: Home },
-
-  // Services
   { path: 'services', component: Services },
-  { path: 'services/:slug', component: ServiceDetail },
 
-  // Blog
-  { path: 'blog', component: Blog },
-  { path: 'blog/:id', component: Post },
+  { path: 'services/:slug', component: ServiceDetail, data: { renderMode: 'client' } },
 
-  // Other pages
   { path: 'portfolio', component: Portfolio },
   { path: 'contact', component: Contact },
+  { path: 'blog', component: Blog },
 
-  // 404
+  { path: 'blog/:id', component: Post, data: { renderMode: 'client' } },
+
   { path: '**', component: NotFound },
 ];

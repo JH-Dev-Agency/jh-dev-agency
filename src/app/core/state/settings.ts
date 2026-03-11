@@ -393,15 +393,15 @@ export class Settings {
       },
       home: {
         hero: {
-          badge: 'Development agency · High performance',
-          title_prefix: 'Software that accelerates your business',
-          title_gradient: 'Less time wasted. More sales. Fewer errors.',
+          badge: 'Software engineering · High performance',
+          title_prefix: 'Software that drives your business',
+          title_gradient: 'Less manual work. More sales. More control.',
           subtitle:
-            'At JH Dev Agency we build websites that load instantly, automate the repetitive with AI, and take your SaaS product from idea to investment-ready MVP. Clear delivery, on time.',
+            'At JH Dev Agency we build software for businesses that want to grow: fast websites that convert, AI automation and SaaS products ready to scale.',
           cta_primary: 'Schedule a call',
           cta_secondary: 'View projects',
         },
-        stack_label: 'Built with high-performance technologies',
+        stack_label: 'Modern technology for fast, scalable software',
         expertise: {
           label: 'Services',
           title: 'Solutions that translate into results',
@@ -409,99 +409,99 @@ export class Settings {
           cards: [
             {
               title: 'Web Development',
-              desc: 'Websites and apps that load in seconds and convert better. Less bounce, more leads, and a professional image for your practice or business.',
+              desc: 'Fast, professional websites that convert visitors into clients. Better Google ranking, less bounce, and more inquiries from the web.',
               bullets: [
-                'Ultra-fast sites that improve your Google ranking and reduce bounce rate.',
-                'Example: clinic or local business with a professional web that captures appointments and inquiries without relying only on social media.',
+                'Sites optimized for speed, SEO and conversion.',
+                'Example: clinic or local business that starts receiving appointments and inquiries from their website.',
               ],
             },
             {
               title: 'Automation & AI',
-              desc: 'Fewer hours on repetitive tasks and more time for what matters. Bookings, reminders, customer replies, and AI-assisted sales—without you being behind the screen.',
+              desc: 'We automate repetitive tasks so your business runs even when you are not behind the screen.',
               bullets: [
-                'Automation of appointments, reminders and follow-up: fewer no-shows and more control over your schedule.',
-                'Example: practice or business that handles inquiries and bookings 24/7 with bots and AI agents.',
+                'Automation of appointments, reminders and customer replies.',
+                'Example: practice or business that handles inquiries and bookings 24/7.',
               ],
             },
             {
               title: 'SaaS Products',
-              desc: 'Your idea turned into a digital product ready for users and investment. MVP with solid architecture, admin panel and payment flows, so you can validate and scale without rebuilding.',
+              desc: 'We turn your idea into a digital product ready for users and investment.',
               bullets: [
-                'MVP ready for users and clear metrics to present to investors or partners.',
-                'Example: startup or business with a digital product (subscriptions, management, tools) that needs to launch fast and with quality.',
+                'Solid MVP with admin panel and payment system.',
+                'Example: startup that needs to launch fast to validate their product.',
               ],
             },
           ],
         },
         proof_social: {
-          title: 'Trusted by businesses that prioritize results',
+          title: 'Engineering focused on results',
           supporting_text:
-            'We work with private practices, local businesses with ambition to grow, and teams building their first SaaS product. Serious engineering, no fluff.',
+            'We work with businesses that want to grow using software: practices, local businesses and startups that need solid, scalable solutions.',
           cases: [
-            'Private clinic — Professional web + appointment and reminder automation → +40% bookings in 3 months.',
-            'Local business — Fast online store + payment integration → fewer order errors and more sales from the web.',
-            'SaaS startup — Product MVP with admin panel and subscriptions → ready for first users and investment in 12 weeks.',
+            'Private clinic — Professional web + appointment automation → +40% bookings in 3 months.',
+            'Local business — Fast online store + integrated payments → fewer errors and more sales.',
+            'SaaS startup — MVP with admin panel and subscriptions → ready for first users in 12 weeks.',
           ],
           why_us:
-            'High-performance engineering: on-time delivery, maintainable code, and focus on what impacts your business—more sales, fewer manual hours, more control.',
+            'Maintainable code, solid architecture and clear deliveries. No smoke, no empty promises.',
         },
         cta_banner: {
-          title: 'Ready to take the next step?',
-          desc: 'Tell us about your project in a short call. No commitment. We define scope, timeline and next step in under 30 minutes.',
+          title: "Let's talk about your project",
+          desc: 'Schedule a 30-minute call and we will review how software can help you save time, improve processes or increase sales.',
           btn: 'Schedule a call',
           terminal: [
             '> Connection to JH Dev Agency established',
-            '> Requirements analysis: awaiting your call',
+            '> Requirements analysis ready',
             '> Next step: schedule 30-min meeting',
           ],
         },
       },
       services: {
-        title: 'Solutions that impact sales, time, and control',
+        title: 'Solutions that impact sales, time and control',
         subtitle:
-          'Fast websites, automated processes, and digital products that cut manual hours, generate more leads, and give you control. Technology built so your business can scale without failures.',
+          'Fast websites, automated processes and digital products that reduce manual hours, generate more leads and give you control. Technology built so your business can scale without failures.',
         more_info: 'More information',
         items: [
           {
             slug: 'web-development',
             title: 'High-Performance Web Development',
-            desc: 'Ultra-fast sites and apps with modern stack (Angular, Next.js) and strong Google scores. Less bounce, better ranking, and more inquiries or sales from the web. Your practice or business looks professional and responds in an instant.',
+            desc: 'Ultra-fast sites and apps with modern stack (Angular, Next.js) and strong Google scores. Less bounce, better ranking and more inquiries or sales from the web. Your practice or business looks professional and responds in an instant.',
             use_case:
-              'Clinic or local business that wants to capture appointments and leads from the web without relying only on social or phone calls.',
+              'Clinic or local business that wants to capture appointments and leads from the web without relying only on social media or phone calls.',
             icon: 'code',
             details: {
               intro:
-                "We don't just make sites that look good. We build websites that load instantly, improve your Google ranking, and turn visitors into appointments or sales. Less bounce, more leads, and a serious image for your business.",
+                "We don't just make sites that look good. We build websites that load instantly, improve your Google ranking and turn visitors into appointments or sales. Less bounce, more leads and a serious image for your business.",
               proof_line:
-                'Example: private clinic or local business that moves from relying on calls and social to receiving bookings and inquiries from the web, with less time wasted and more control.',
+                'Example: private clinic or local business that moves from relying on calls and social media to receiving bookings and inquiries from the web, with less time wasted and more control.',
               features: [
                 'Fast, scalable architecture (SPA/SSR): your site responds in an instant and handles more traffic without slowing down.',
                 'Technical SEO so you get found on Google when people search for your services or area, not just your name.',
                 "Mobile-first design so it works on any device and you don't lose leads who visit from their phone.",
                 'Integration with booking systems or contact forms so every visit can turn into an appointment or captured lead.',
               ],
-              cta: 'Audit my site',
+              cta: 'Audit my current site',
               cta_subline:
-                'Includes: load speed, technical SEO, mobile experience, and message clarity. No commitment.',
+                'Includes: load speed, technical SEO, mobile experience and message clarity. No commitment.',
             },
           },
           {
             slug: 'ai-automation',
             title: 'Automation & AI',
-            desc: 'WhatsApp bots, AI agents, and automated flows for bookings, reminders, and customer replies. Your business runs 24/7 with fewer manual hours and fewer data-entry errors. Fewer no-shows and fewer repetitive calls.',
+            desc: 'WhatsApp bots, AI agents and automated flows for bookings, reminders and customer replies. Your business runs 24/7 with fewer manual hours and fewer data-entry errors. Fewer no-shows and fewer repetitive calls.',
             use_case:
-              'Practice or business that needs to automate appointments, reminders, and first responses to patients or customers.',
+              'Practice or business that needs to automate appointments, reminders and first responses to patients or customers.',
             icon: 'cpu',
             details: {
               intro:
-                'We automate the repetitive so you can focus on what really matters. Bookings, reminders, and answers to inquiries run on their own, without you being behind the screen. Fewer no-shows, fewer administrative errors, and more control over your schedule and sales.',
+                'We automate the repetitive so you can focus on what really matters. Bookings, reminders and answers to inquiries run on their own, without you being behind the screen. Fewer no-shows, fewer administrative errors and more control over your schedule and sales.',
               proof_line:
                 'Example: private practice that reduces missed appointments by 60% thanks to automatic WhatsApp reminders and answers basic inquiries 24/7 without the doctor being available.',
               features: [
                 "Chatbots and automatic replies 24/7 so no message goes unanswered, even when you're not online, and every inquiry turns into an appointment or lead.",
                 'Appointment reminders via WhatsApp or email to reduce no-shows and better organize your day, without having to call each patient manually.',
-                'Invoicing and email automation so you can bill and send documents without wasting time on repetitive tasks that AI can do for you.',
-                "AI agents to qualify leads and follow up on sales automatically, identifying who's closer to hiring and prioritizing your time.",
+                'Invoicing and email automation so you can bill and send documents without wasting time on repetitive tasks that AI can handle for you.',
+                "AI agents to qualify leads and follow up on sales automatically, identifying who's closest to hiring and prioritizing your time.",
               ],
               cta: 'Automate my business',
               cta_subline:
@@ -511,7 +511,7 @@ export class Settings {
           {
             slug: 'saas-product',
             title: 'SaaS & Custom Applications',
-            desc: 'We turn your idea into a digital product ready for users and investment: management platforms, tools with subscriptions or payment flows. MVP with solid architecture, admin panel, and clear metrics. Validate without rebuilding everything.',
+            desc: 'We turn your idea into a digital product ready for users and investment: management platforms, tools with subscriptions or payment flows. MVP with solid architecture, admin panel and clear metrics. Validate without rebuilding everything.',
             use_case:
               'Startup or business launching its first digital product (management, payments, subscriptions) and needing something ready to grow and present to investors.',
             icon: 'layers',
@@ -521,26 +521,26 @@ export class Settings {
               proof_line:
                 'Example: booking platform with monthly subscription for professionals who need to charge and manage appointments online, ready to receive users and present clear metrics to investors.',
               features: [
-                'Robust backend (Django, Node) and scalable databases so your product is stable, secure, and can grow without crashes or performance issues when you have more users.',
-                'Admin panel so you control users, payments, and metrics without depending on a developer every time you need to make an adjustment or see how your business is doing.',
+                'Robust backend (Django, Node) and scalable databases so your product is stable, secure and can grow without crashes or performance issues when you have more users.',
+                'Admin panel so you control users, payments and metrics without depending on a developer every time you need to make an adjustment or check how your business is doing.',
                 "Payment integration (Stripe, PayPal) and subscriptions so you can charge securely and automatically, without worrying about your customers' data security.",
-                'Architecture ready to grow with more users, new features, and marketing campaigns without having to rewrite the codebase when you want to scale.',
+                'Architecture ready to grow with more users, new features and marketing campaigns without having to rewrite the codebase when you want to scale.',
               ],
               cta: 'Quote my application',
               cta_subline:
-                'We give you a clear estimate of timeline, cost, and phases to launch your MVP. No commitment.',
+                'We give you a clear estimate of timeline, cost and phases to launch your MVP. No commitment.',
             },
           },
           {
             slug: 'cloud-infrastructure',
             title: 'Infrastructure & Cloud',
-            desc: "Deployments on secure servers, SQL databases, and architectures that don't go down. Your software runs fast and stable; fewer outages, more trust from your customers and from you.",
+            desc: "Deployments on secure servers, SQL databases and architectures that don't go down. Your software runs fast and stable; fewer outages, more trust from your customers and from you.",
             use_case:
-              'Business or SaaS product that already has an application and needs it to be stable, secure, and scalable without worrying about servers.',
+              'Business or SaaS product that already has an application and needs it to be stable, secure and scalable without worrying about servers.',
             icon: 'cloud',
             details: {
               intro:
-                "Your software lives in the cloud. We make sure it's secure, fast, and stable: fewer outages during critical hours, better performance even as traffic grows, and automatic backups so you never lose data. Without you having to worry about servers or traffic, you focus on your business and we focus on making everything work.",
+                "Your software lives in the cloud. We make sure it's secure, fast and stable: fewer outages during critical hours, better performance even as traffic grows, and automatic backups so you never lose data. Without you having to worry about servers or traffic, you focus on your business and we focus on making everything work.",
               proof_line:
                 'Example: booking platform that goes from crashing during peak hours to handling ad campaigns without interruptions, with automatic backups and monitoring that detects issues before they affect users.',
               features: [
@@ -558,56 +558,26 @@ export class Settings {
       },
       portfolio: {
         label: 'Portfolio',
-        title: 'Featured Projects',
-        preview_suffix: 'Preview',
+        title: 'Clients and projects',
         subtitle:
-          'Real products we build: personal finance, adoption, SaaS, and high-performance corporate sites. Engineering applied to results.',
+          'Real projects developed for businesses looking to improve their digital presence and attract more clients through modern, fast software.',
         items: [
           {
-            id: 'paymind',
-            title: 'PayMind',
-            category: 'Personal finance / Fintech',
-            desc: 'Web application for intelligent credit card management and debt control.',
+            id: 'otorrino-tlaxcala',
+            title: 'ENT Clinic · Tlaxcala',
+            category: 'Real client · Professional website',
+            desc: 'Development of a modern website for an ear, nose and throat practice focused on building patient trust and making direct contact easier from the web.',
             result:
-              'For users with multiple cards who want better control over debt and on-time payments.',
-            tags: ['Django', 'Python', 'Fintech'],
-            image: 'assets/images/paymind-placeholder.jpg',
-          },
-          {
-            id: 'pawmatch',
-            title: 'PawMatch',
-            category: 'Adoption / NGO',
-            desc: '"Tinder-style" platform for pet adoption and matching.',
-            result:
-              'For shelters and adopters: faster adoptions and better matching between pets and families.',
-            tags: ['Next.js', 'Supabase', 'React'],
-            image: 'assets/images/pawmatch-placeholder.jpg',
-          },
-          {
-            id: 'cardflow',
-            title: 'CardFlow',
-            category: 'Personal finance',
-            desc: 'Financial suite for cash flow tracking and personal expense analysis.',
-            result:
-              'For individuals and teams who need clarity on spending and cash flow without spreadsheets.',
-            tags: ['Angular', 'TypeScript', 'Tailwind'],
-            image: 'assets/images/cardflow-placeholder.jpg',
-          },
-          {
-            id: 'jh-agency',
-            title: 'JH Dev Agency',
-            category: 'B2B corporate site',
-            desc: 'High-performance corporate site with modern architecture (SSR, Zoneless).',
-            result: 'For the agency: stronger image, speed, and credibility with B2B clients.',
-            tags: ['Angular 19', 'SSR', 'Tailwind v4'],
-            image: 'assets/images/agency-placeholder.jpg',
+              'Professional online presence and direct channel for medical inquiries and appointments.',
+            tags: ['Angular', 'SEO Local', 'Web Performance'],
+            image: 'assets/portfolio/otorrinotlaxcala.webp',
           },
         ],
       },
       contact: {
         title: 'Schedule a call',
         subtitle:
-          "Tell us briefly about your project. We'll reply within 24 hours and, if it's a fit, we'll set up a 30-minute call to define scope, timeline, and next steps.",
+          "Tell us briefly about your project. We'll reply within 24 hours and, if it's a fit, we'll set up a 30-minute call to define scope, timeline and next steps.",
         subtitle_extra:
           "No commitment: it's an exploratory call to get to know each other and see if we can help.",
         form: {
@@ -617,10 +587,10 @@ export class Settings {
           type_help: 'E.g. site for your practice, booking automation, SaaS platform, etc.',
           budget: 'Estimated Budget',
           budget_help:
-            'If you\'re not sure about budget yet, choose "To be defined" and we\'ll discuss it on the call.',
+            'If you\'re not sure about the budget yet, choose "To be defined" and we\'ll discuss it on the call.',
           message: 'Project Details',
           message_placeholder:
-            "Tell us what your business does, what problem you want to solve, and when you'd like to launch.",
+            "Tell us what your business does, what problem you want to solve and when you'd like to launch.",
           btn: 'Request 30-min call',
           after_submit: "We'll reply within 24 hours with next steps for your project.",
         },
@@ -634,49 +604,128 @@ export class Settings {
         },
       },
       blog: {
-        title: 'Engineering & Thoughts',
+        title: 'Engineering & Thinking',
         subtitle:
-          'Ideas, real cases, and strategies on how we use software, architecture, and AI to make businesses more efficient. For business owners, founders, and technical teams.',
+          'Ideas, technical analysis and strategies on how we use software, modern architecture and artificial intelligence to build fast, scalable and profitable digital products.',
         author_line:
-          'Written by José Horacio, software engineer specialized in high-performance applications and AI automation.',
+          'Written by José Horacio, software engineer focused on high-performance applications, modern architecture and AI automation.',
         posts: [
           {
             id: 1,
-            title: 'Why we migrated from React to Angular 19 for Enterprise Apps',
+            title: 'Why we migrated from React to Angular 19 for Enterprise applications',
             excerpt:
-              "A deep dive into performance, Signals, and why Angular's strict structure saves money in the long run.",
+              'An analysis of performance, architecture and why Angular 19 is becoming a very solid alternative for large projects.',
             benefit:
-              'Ideal for teams that need stable applications in the long run and want to reduce maintenance costs.',
+              'Ideal for teams working on complex applications who want to reduce technical debt and maintenance costs.',
             date: 'Feb 12, 2026',
             readTime: '6 min read',
             category: 'Architecture',
+            content: [
+              {
+                type: 'p',
+                text: 'For years React has been one of the most popular tools for building modern web interfaces. However, in enterprise projects we have seen that Angular offers important advantages when the size of the project and the team grows.',
+              },
+              {
+                type: 'h2',
+                text: 'Consistent architecture for large teams',
+              },
+              {
+                type: 'p',
+                text: "One of Angular's main advantages is its structure. While React leaves many decisions open, Angular defines a clear architecture from the start. This makes it easier for large teams to collaborate without creating chaos in the codebase.",
+              },
+              {
+                type: 'h2',
+                text: 'Angular Signals and performance',
+              },
+              {
+                type: 'p',
+                text: 'With the arrival of Signals, Angular introduces a modern reactive model that reduces unnecessary renders and simplifies state management. This enables faster and more predictable applications.',
+              },
+              {
+                type: 'p',
+                text: 'For enterprise applications where maintainability, scalability and stability are critical, Angular 19 is becoming an increasingly interesting alternative to React.',
+              },
+            ],
           },
           {
             id: 2,
             title: 'Integrating AI Agents into traditional workflows',
             excerpt:
-              "How we use Python and OpenAI to automate 40% of our clients' administrative tasks.",
+              'How we are using artificial intelligence agents to automate repetitive tasks in real businesses.',
             benefit:
-              'For practices and businesses that want to cut administrative tasks without hiring more staff.',
+              'Especially useful for practices, local businesses and startups that want to reduce manual work.',
             date: 'Jan 28, 2026',
             readTime: '4 min read',
             category: 'Artificial Intelligence',
+            content: [
+              {
+                type: 'p',
+                text: 'Artificial intelligence is no longer just for large companies. Today any business can integrate AI-based automation to improve its efficiency.',
+              },
+              {
+                type: 'h2',
+                text: 'Automating repetitive tasks',
+              },
+              {
+                type: 'p',
+                text: 'Many businesses lose hours on administrative tasks: replying to messages, confirming appointments, sending reminders or classifying potential clients. These tasks can be automated with AI agents.',
+              },
+              {
+                type: 'h2',
+                text: 'AI as an operational assistant',
+              },
+              {
+                type: 'p',
+                text: 'AI agents can act as assistants that answer basic inquiries, manage bookings or collect information before a sales call.',
+              },
+              {
+                type: 'p',
+                text: 'In many projects we have managed to reduce up to 40% of the time spent on administrative tasks simply by automating these processes.',
+              },
+            ],
           },
           {
             id: 3,
-            title: 'Optimizing Core Web Vitals for E-commerce',
+            title: 'Optimizing Core Web Vitals to improve SEO',
             excerpt:
-              'Advanced Lazy Loading and Server-Side Rendering (SSR) strategies to boost SEO.',
+              'How to optimize speed, interactivity and visual stability to improve Google ranking.',
             benefit:
-              'Useful for e-commerce that want more sales from Google and fewer users leaving due to slow speed.',
+              'Essential for businesses that depend on organic traffic or want to improve conversions from their website.',
             date: 'Jan 15, 2026',
             readTime: '8 min read',
             category: 'Performance',
+            content: [
+              {
+                type: 'p',
+                text: 'Google uses metrics called Core Web Vitals to measure the user experience on a website. These metrics directly influence search engine ranking.',
+              },
+              {
+                type: 'h2',
+                text: 'LCP — Largest Contentful Paint',
+              },
+              {
+                type: 'p',
+                text: 'This metric measures how long it takes for the main content of a page to appear. Optimizing images, reducing unnecessary scripts and using efficient rendering can significantly improve this value.',
+              },
+              {
+                type: 'h2',
+                text: 'CLS — Cumulative Layout Shift',
+              },
+              {
+                type: 'p',
+                text: 'CLS measures how much content shifts while the page loads. Reserving space for images and avoiding late-loading elements helps improve this metric.',
+              },
+              {
+                type: 'p',
+                text: 'Optimizing Core Web Vitals not only improves SEO, it also improves user experience and increases the likelihood of conversion.',
+              },
+            ],
           },
         ],
       },
       footer: {
-        tagline: 'High-performance software for businesses that want to grow.',
+        tagline:
+          'We develop software, automation and artificial intelligence for businesses that want to grow.',
         rights: 'All rights reserved.',
         sections: { company: 'Company', legal: 'Legal' },
         links: {
@@ -689,8 +738,8 @@ export class Settings {
       notFound: {
         code: '404',
         title: 'System Offline',
-        desc: 'The route you are trying to explore does not exist or has been moved. Return to safety base.',
-        btn: 'Return to Dashboard',
+        desc: 'The route you are trying to explore does not exist or has been moved. Return to safe base.',
+        btn: 'Back to Dashboard',
       },
     },
   };

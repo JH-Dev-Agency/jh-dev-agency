@@ -307,7 +307,8 @@ export class Settings {
         ],
       },
       footer: {
-        tagline: 'Ingeniería de software para negocios que quieren crecer.',
+        tagline:
+          'Desarrollamos software, automatización e inteligencia artificial para negocios que quieren crecer.',
         rights: 'Todos los derechos reservados.',
         sections: { company: 'Compañía', legal: 'Legal' },
         links: {

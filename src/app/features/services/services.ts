@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Settings } from '../../core/state/settings';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../../core/seo/seoService';
 
 @Component({
   selector: 'app-services',
@@ -142,4 +143,14 @@ import { RouterLink } from '@angular/router';
 })
 export class Services {
   public settings = inject(Settings);
+  seo = inject(SeoService);
+  constructor() {
+    this.seo.updateSeo({
+      title: 'Servicios de Desarrollo Web, IA y SaaS | JH Dev Agency',
+      description:
+        'Servicios de desarrollo web de alto rendimiento, automatización con inteligencia artificial y desarrollo de productos SaaS.',
+      keywords: 'desarrollo web profesional, automatización con IA, desarrollo SaaS',
+      url: 'https://jhdevagency.com/services',
+    });
+  }
 }

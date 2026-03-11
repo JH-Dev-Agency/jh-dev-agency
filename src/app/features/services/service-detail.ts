@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Settings } from '../../core/state/settings';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
+import { SeoService } from '../../core/seo/seoService';
 
 @Component({
   selector: 'app-service-detail',
@@ -161,14 +162,25 @@ import { map } from 'rxjs/operators';
   `,
 })
 export class ServiceDetail {
-  private route = inject(ActivatedRoute);
-  public settings = inject(Settings);
+  settings = inject(Settings);
+  route = inject(ActivatedRoute);
+  seo = inject(SeoService);
 
-  private slug = toSignal(this.route.paramMap.pipe(map((params) => params.get('slug'))));
+  slug = this.route.snapshot.paramMap.get('slug');
 
-  public service = computed<any>(() => {
-    const currentSlug = this.slug();
-    const allServices = this.settings.text().services.items;
-    return allServices.find((item) => item.slug === currentSlug);
+  service = computed<any>(() => {
+    return this.settings.text().services.items.find((s: any) => s.slug === this.slug);
   });
+
+  constructor() {
+    const serviceData = this.service();
+
+    if (serviceData) {
+      this.seo.updateSeo({
+        title: serviceData.title + ' | JH Dev Agency',
+        description: serviceData.desc,
+        url: 'https://jhdevagency.com/services/' + this.slug,
+      });
+    }
+  }
 }

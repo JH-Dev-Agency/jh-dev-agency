@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Settings } from '../../core/state/settings';
+import { SeoService } from '../../core/seo/seoService';
 
 @Component({
   selector: 'app-blog',
@@ -85,5 +86,15 @@ import { Settings } from '../../core/state/settings';
   `,
 })
 export class Blog {
-  readonly settings = inject(Settings);
+  settings = inject(Settings);
+  seo = inject(SeoService);
+
+  constructor() {
+    this.seo.updateSeo({
+      title: 'Blog de Ingeniería de Software | JH Dev Agency',
+      description:
+        'Ideas, análisis técnicos y estrategias sobre desarrollo web, arquitectura moderna e inteligencia artificial.',
+      url: 'https://jhdevagency.com/blog',
+    });
+  }
 }

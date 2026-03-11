@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Settings } from '../../core/state/settings';
+import { SeoService } from '../../core/seo/seoService';
 
 @Component({
   selector: 'app-home',
@@ -192,23 +193,57 @@ import { Settings } from '../../core/state/settings';
                   class="rounded-lg bg-zinc-100 dark:bg-zinc-800 p-2 ring-1 ring-zinc-900/10 dark:ring-white/10"
                 >
                   @if ($index === 0) {
-                    <svg class="h-6 w-6 text-zinc-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    <svg
+                      class="h-6 w-6 text-zinc-900 dark:text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                      />
                     </svg>
                   } @else if ($index === 1) {
-                    <svg class="h-6 w-6 text-zinc-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <svg
+                      class="h-6 w-6 text-zinc-900 dark:text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
                     </svg>
                   } @else {
-                    <svg class="h-6 w-6 text-zinc-900 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    <svg
+                      class="h-6 w-6 text-zinc-900 dark:text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                      />
                     </svg>
                   }
                 </div>
-                <h3 class="mt-4 text-lg font-bold text-zinc-900 dark:text-white">{{ card.title }}</h3>
+                <h3 class="mt-4 text-lg font-bold text-zinc-900 dark:text-white">
+                  {{ card.title }}
+                </h3>
                 <p class="mt-2 text-base text-zinc-600 dark:text-zinc-400">{{ card.desc }}</p>
                 @if (card.bullets && card.bullets.length) {
-                  <ul class="mt-3 space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
+                  <ul
+                    class="mt-3 space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside"
+                  >
                     @for (bullet of card.bullets; track bullet) {
                       <li>{{ bullet }}</li>
                     }
@@ -229,7 +264,9 @@ import { Settings } from '../../core/state/settings';
         </div>
       </section>
 
-      <section class="py-24 sm:py-32 border-y border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30">
+      <section
+        class="py-24 sm:py-32 border-y border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"
+      >
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl text-center mb-12">
             <h2 class="text-base font-semibold leading-7 text-sky-500 uppercase tracking-widest">
@@ -242,12 +279,17 @@ import { Settings } from '../../core/state/settings';
           <ul class="mx-auto max-w-2xl space-y-4 text-base text-zinc-700 dark:text-zinc-300">
             @for (c of settings.text().home.proof_social.cases; track c) {
               <li class="flex items-start gap-3">
-                <span class="flex-shrink-0 mt-1.5 h-2 w-2 rounded-full bg-sky-500" aria-hidden="true"></span>
+                <span
+                  class="flex-shrink-0 mt-1.5 h-2 w-2 rounded-full bg-sky-500"
+                  aria-hidden="true"
+                ></span>
                 <span>{{ c }}</span>
               </li>
             }
           </ul>
-          <p class="mt-12 mx-auto max-w-2xl text-center text-sm font-medium text-zinc-600 dark:text-zinc-400 italic">
+          <p
+            class="mt-12 mx-auto max-w-2xl text-center text-sm font-medium text-zinc-600 dark:text-zinc-400 italic"
+          >
             {{ settings.text().home.proof_social.why_us }}
           </p>
         </div>
@@ -282,7 +324,8 @@ import { Settings } from '../../core/state/settings';
                 <div class="p-6">
                   <div class="text-zinc-400 font-mono text-xs">
                     @for (line of settings.text().home.cta_banner.terminal; track line) {
-                      <span>{{ line }}</span><br />
+                      <span>{{ line }}</span
+                      ><br />
                     }
                     <span class="animate-pulse text-sky-400">_</span>
                   </div>
@@ -297,4 +340,15 @@ import { Settings } from '../../core/state/settings';
 })
 export class Home {
   public settings = inject(Settings);
+  seo = inject(SeoService);
+
+  constructor() {
+    this.seo.updateSeo({
+      title: 'JH Dev Agency | Desarrollo Web, Automatización e IA',
+      description:
+        'Desarrollamos software, automatización e inteligencia artificial para negocios que quieren crecer. Webs rápidas, SaaS y automatización de procesos.',
+      keywords: 'desarrollo web, automatización IA, software a medida, SaaS development',
+      url: 'https://jhdevagency.com',
+    });
+  }
 }

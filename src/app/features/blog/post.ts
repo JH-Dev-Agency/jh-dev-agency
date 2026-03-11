@@ -2,6 +2,7 @@ import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Settings } from '../../core/state/settings';
+import { SeoService } from '../../core/seo/seoService';
 
 @Component({
   selector: 'app-post',
@@ -59,12 +60,25 @@ import { Settings } from '../../core/state/settings';
   `,
 })
 export class Post {
-  private route = inject(ActivatedRoute);
-  private settings = inject(Settings);
+  settings = inject(Settings);
+  route = inject(ActivatedRoute);
+  seo = inject(SeoService);
 
-  postId = this.route.snapshot.paramMap.get('id');
+  id = this.route.snapshot.paramMap.get('id');
 
   post = computed<any>(() => {
-    return this.settings.text().blog.posts.find((p: any) => p.id.toString() === this.postId);
+    return this.settings.text().blog.posts.find((p: any) => String(p.id) === this.id);
   });
+
+  constructor() {
+    const postData = this.post();
+
+    if (postData) {
+      this.seo.updateSeo({
+        title: postData.title + ' | JH Dev Agency',
+        description: postData.excerpt,
+        url: 'https://jhdevagency.com/blog/' + this.id,
+      });
+    }
+  }
 }

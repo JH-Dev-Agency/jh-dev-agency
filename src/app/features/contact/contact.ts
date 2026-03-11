@@ -27,10 +27,6 @@ import { Settings } from '../../core/state/settings';
 
           <div class="mt-10 space-y-6 text-zinc-600 dark:text-zinc-400">
             <div class="flex items-center gap-3">
-              <div class="p-2 rounded-lg bg-sky-500/10 text-sky-500">✉️</div>
-            </div>
-
-            <div class="flex items-center gap-3">
               <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-500">💬</div>
               <a
                 href="https://wa.me/522464637426"

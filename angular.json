@@ -23,9 +23,8 @@
             ],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
-
             "outputMode": "server",
-
+            "prerender": false,
             "ssr": {
               "entry": "src/server.ts"
             }
@@ -39,8 +38,7 @@
                   "maximumError": "1MB"
                 }
               ],
-              "outputHashing": "all",
-              "prerender": false
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,

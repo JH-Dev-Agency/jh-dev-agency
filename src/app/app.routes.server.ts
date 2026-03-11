@@ -26,6 +26,7 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
   },
 
+  // ❗ rutas dinámicas
   {
     path: 'services/:slug',
     renderMode: RenderMode.Server,
@@ -33,6 +34,12 @@ export const serverRoutes: ServerRoute[] = [
 
   {
     path: 'blog/:id',
+    renderMode: RenderMode.Server,
+  },
+
+  // fallback
+  {
+    path: '**',
     renderMode: RenderMode.Server,
   },
 ];

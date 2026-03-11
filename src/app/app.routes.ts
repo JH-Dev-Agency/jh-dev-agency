@@ -14,15 +14,15 @@ import { NotFound } from './features/not-found/not-found';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'services', component: Services },
 
-  { path: 'services/:slug', component: ServiceDetail, data: { renderMode: 'client' } },
+  { path: 'services', component: Services },
+  { path: 'services/:slug', component: ServiceDetail },
 
   { path: 'portfolio', component: Portfolio },
   { path: 'contact', component: Contact },
-  { path: 'blog', component: Blog },
 
-  { path: 'blog/:id', component: Post, data: { renderMode: 'client' } },
+  { path: 'blog', component: Blog },
+  { path: 'blog/:id', component: Post },
 
   { path: '**', component: NotFound },
 ];

@@ -26,7 +26,7 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
   },
 
-  // ❗ rutas dinámicas
+  // ❗ rutas dinámicas → NO prerender
   {
     path: 'services/:slug',
     renderMode: RenderMode.Server,

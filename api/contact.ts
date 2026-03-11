@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
@@ -8,20 +10,12 @@ export default async function handler(req: any, res: any) {
   try {
     const { name, email, type, budget, message } = req.body;
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"JH Dev Agency Lead" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: 'JH Dev Agency <onboarding@resend.dev>',
+      to: 'tu_correo@gmail.com',
       subject: 'Nuevo lead desde jhdevagency.com',
       html: `
-        <h2>Nuevo lead</h2>
+        <h2>Nuevo contacto</h2>
         <p><b>Nombre:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Tipo:</b> ${type}</p>
@@ -33,7 +27,7 @@ export default async function handler(req: any, res: any) {
 
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error('EMAIL ERROR:', error);
+    console.error(error);
 
     return res.status(500).json({ error: 'Email failed' });
   }

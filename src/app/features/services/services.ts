@@ -14,11 +14,13 @@ import { RouterLink } from '@angular/router';
           <h2 class="text-base font-semibold leading-7 text-sky-500 uppercase tracking-widest">
             {{ settings.text().brandName }}
           </h2>
+
           <p
             class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
           >
             {{ settings.text().services.title }}
           </p>
+
           <p class="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             {{ settings.text().services.subtitle }}
           </p>
@@ -28,7 +30,8 @@ import { RouterLink } from '@angular/router';
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
             @for (service of settings.text().services.items; track service.title) {
               <div
-                class="flex flex-col group p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-900 transition-all duration-300 hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1"
+                [routerLink]="['/services', service.slug]"
+                class="flex flex-col group p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-900 transition-all duration-300 hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1 cursor-pointer"
               >
                 <dt
                   class="flex items-center gap-x-3 text-base font-semibold leading-7 text-zinc-900 dark:text-white"
@@ -45,13 +48,12 @@ import { RouterLink } from '@angular/router';
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       >
                         <polyline points="16 18 22 12 16 6" />
                         <polyline points="8 6 2 12 8 18" />
                       </svg>
                     }
+
                     @if (service.icon === 'cpu') {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +63,6 @@ import { RouterLink } from '@angular/router';
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       >
                         <rect width="16" height="16" x="4" y="4" rx="2" />
                         <rect width="6" height="6" x="9" y="9" rx="1" />
@@ -76,6 +76,7 @@ import { RouterLink } from '@angular/router';
                         <path d="M9 20v2" />
                       </svg>
                     }
+
                     @if (service.icon === 'layers') {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +86,6 @@ import { RouterLink } from '@angular/router';
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       >
                         <path
                           d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
@@ -95,6 +94,7 @@ import { RouterLink } from '@angular/router';
                         <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
                       </svg>
                     }
+
                     @if (service.icon === 'cloud') {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -104,33 +104,32 @@ import { RouterLink } from '@angular/router';
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       >
-                        <path
-                          d="M17.5 19c0-1.7-1.3-3-3-3h-1.1c-.1-2.9-2.4-5.2-5.3-5.3h-.1c-3 0-5.4 2.4-5.4 5.4v.6c-2.4.4-4.2 2.6-4.1 5.1C-1.4 24.6 1.2 27 4 27h13.5c3.2-.2 5.7-2.9 5.5-6.1v-.4c0-2.8-2.2-5.1-5-5.5h-.5Z"
-                        />
+                        <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25" />
+                        <path d="M16 16l-4 4-4-4" />
                       </svg>
                     }
                   </div>
+
                   {{ service.title }}
                 </dt>
-                <dd
-                  class="mt-4 flex flex-auto flex-col text-base leading-7 text-zinc-600 dark:text-zinc-400"
-                >
-                  <p class="flex-auto">{{ service.desc }}</p>
+
+                <dd class="mt-4 flex flex-auto flex-col text-zinc-600 dark:text-zinc-400">
+                  <p class="flex-auto text-sm leading-relaxed">
+                    {{ service.desc }}
+                  </p>
+
                   @if (service.use_case) {
-                    <p class="mt-3 text-sm italic text-zinc-500 dark:text-zinc-500 border-l-2 border-sky-500/30 pl-3">
+                    <p
+                      class="mt-3 text-sm italic text-zinc-500 dark:text-zinc-500 border-l-2 border-sky-500/30 pl-3"
+                    >
                       {{ service.use_case }}
                     </p>
                   }
-                  <p class="mt-6">
-                    <a
-                      [routerLink]="['/services', service.slug]"
-                      class="text-sm font-semibold leading-6 text-sky-500 hover:text-sky-400 group-hover:translate-x-2 transition-transform inline-flex items-center gap-1"
-                    >
-                      {{ settings.text().services.more_info }} <span aria-hidden="true">→</span>
-                    </a>
+
+                  <p class="mt-6 text-sm font-semibold text-sky-500 inline-flex items-center gap-1">
+                    {{ settings.text().services.more_info }}
+                    <span aria-hidden="true">→</span>
                   </p>
                 </dd>
               </div>

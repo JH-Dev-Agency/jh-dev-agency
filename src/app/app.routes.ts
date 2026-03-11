@@ -1,18 +1,33 @@
 import { Routes } from '@angular/router';
+
 import { Home } from './features/home/home';
 import { Services } from './features/services/services';
-import { Portfolio } from './features/portfolio/portfolio';
-import { Contact } from './features/contact/contact';
-import { Blog } from './features/blog/blog';
-import { NotFound } from './features/not-found/not-found';
 import { ServiceDetail } from './features/services/service-detail';
 
+import { Blog } from './features/blog/blog';
+import { Post } from './features/blog/post';
+
+import { Portfolio } from './features/portfolio/portfolio';
+import { Contact } from './features/contact/contact';
+
+import { NotFound } from './features/not-found/not-found';
+
 export const routes: Routes = [
-  { path: '', component: Home }, // Ruta Raíz
+  // Home
+  { path: '', component: Home },
+
+  // Services
   { path: 'services', component: Services },
   { path: 'services/:slug', component: ServiceDetail },
+
+  // Blog
+  { path: 'blog', component: Blog },
+  { path: 'blog/:id', component: Post },
+
+  // Other pages
   { path: 'portfolio', component: Portfolio },
   { path: 'contact', component: Contact },
-  { path: 'blog', component: Blog },
+
+  // 404
   { path: '**', component: NotFound },
 ];

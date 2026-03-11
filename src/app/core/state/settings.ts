@@ -187,49 +187,20 @@ export class Settings {
       },
       portfolio: {
         label: 'Portafolio',
-        title: 'Proyectos Destacados',
-        preview_suffix: 'Vista previa',
+        title: 'Clientes y proyectos',
         subtitle:
-          'Productos reales que construimos: finanzas personales, adopción, SaaS y sitios corporativos de alto rendimiento. Ingeniería aplicada a resultados.',
+          'Proyectos reales desarrollados para negocios que buscan mejorar su presencia digital y atraer más clientes mediante software moderno y rápido.',
+
         items: [
           {
-            id: 'paymind',
-            title: 'PayMind',
-            category: 'Finanzas personales / Fintech',
-            desc: 'Aplicación web para la gestión inteligente de tarjetas de crédito y control de deudas.',
+            id: 'otorrino-tlaxcala',
+            title: 'Clínica de Otorrinolaringología · Tlaxcala',
+            category: 'Cliente real · Sitio web profesional',
+            desc: 'Desarrollo de sitio web moderno para consultorio de otorrinolaringología enfocado en generar confianza en pacientes y facilitar el contacto directo desde internet.',
             result:
-              'Para usuarios con múltiples tarjetas que buscan mejor control de deudas y pagos a tiempo.',
-            tags: ['Django', 'Python', 'Fintech'],
-            image: 'assets/images/paymind-placeholder.jpg',
-          },
-          {
-            id: 'pawmatch',
-            title: 'PawMatch',
-            category: 'Adopción / ONG',
-            desc: 'Plataforma estilo "Tinder" para adopción y emparejamiento de mascotas.',
-            result:
-              'Para refugios y adoptantes: adopciones más rápidas y mejor emparejamiento entre mascotas y familias.',
-            tags: ['Next.js', 'Supabase', 'React'],
-            image: 'assets/images/pawmatch-placeholder.jpg',
-          },
-          {
-            id: 'cardflow',
-            title: 'CardFlow',
-            category: 'Finanzas personales',
-            desc: 'Suite financiera para seguimiento de flujo de efectivo y análisis de gastos personales.',
-            result:
-              'Para personas y equipos que necesitan claridad sobre gastos y flujo de caja sin depender de hojas de cálculo.',
-            tags: ['Angular', 'TypeScript', 'Tailwind'],
-            image: 'assets/images/cardflow-placeholder.jpg',
-          },
-          {
-            id: 'jh-agency',
-            title: 'JH Dev Agency',
-            category: 'Sitio corporativo B2B',
-            desc: 'Sitio corporativo de alto rendimiento con arquitectura moderna (SSR, Zoneless).',
-            result: 'Para la agencia: mejor imagen, velocidad y credibilidad ante clientes B2B.',
-            tags: ['Angular 19', 'SSR', 'Tailwind v4'],
-            image: 'assets/images/agency-placeholder.jpg',
+              'Presencia profesional en línea y canal directo para consultas y citas médicas.',
+            tags: ['Angular', 'SEO Local', 'Web Performance'],
+            image: 'assets/portfolio/otorrinotlaxcala.webp',
           },
         ],
       },
@@ -267,42 +238,126 @@ export class Settings {
       blog: {
         title: 'Ingeniería & Pensamiento',
         subtitle:
-          'Ideas, casos reales y estrategias sobre cómo usamos software, arquitectura e IA para hacer negocios más eficientes. Para dueños de negocio, founders y equipos técnicos.',
+          'Ideas, análisis técnicos y estrategias sobre cómo usamos software, arquitectura moderna e inteligencia artificial para construir productos digitales rápidos, escalables y rentables.',
         author_line:
-          'Escrito por José Horacio, ingeniero de software especializado en aplicaciones high-performance y automatización con IA.',
+          'Escrito por José Horacio, ingeniero de software enfocado en aplicaciones de alto rendimiento, arquitectura moderna y automatización con IA.',
+
         posts: [
           {
             id: 1,
             title: 'Por qué migramos de React a Angular 19 para aplicaciones Enterprise',
             excerpt:
-              'Un análisis profundo sobre rendimiento, señales (Signals) y por qué la estructura estricta de Angular ahorra dinero a largo plazo.',
+              'Un análisis sobre rendimiento, arquitectura y por qué Angular 19 se está convirtiendo en una alternativa muy sólida para proyectos grandes.',
             benefit:
-              'Ideal para equipos que necesitan aplicaciones estables a largo plazo y quieren reducir costos de mantenimiento.',
+              'Ideal para equipos que trabajan en aplicaciones complejas y quieren reducir deuda técnica y costos de mantenimiento.',
             date: '12 Feb, 2026',
             readTime: '6 min lectura',
             category: 'Arquitectura',
+
+            content: [
+              {
+                type: 'p',
+                text: 'Durante años React ha sido una de las herramientas más populares para desarrollar interfaces web modernas. Sin embargo, en proyectos enterprise hemos visto que Angular ofrece ventajas importantes cuando el tamaño del proyecto y del equipo crece.',
+              },
+              {
+                type: 'h2',
+                text: 'Arquitectura consistente para equipos grandes',
+              },
+              {
+                type: 'p',
+                text: 'Una de las principales ventajas de Angular es su estructura. Mientras que React deja muchas decisiones abiertas, Angular define una arquitectura clara desde el inicio. Esto facilita que equipos grandes puedan colaborar sin generar caos en el código.',
+              },
+              {
+                type: 'h2',
+                text: 'Angular Signals y rendimiento',
+              },
+              {
+                type: 'p',
+                text: 'Con la llegada de Signals, Angular introduce un modelo reactivo moderno que reduce renders innecesarios y simplifica la gestión del estado. Esto permite aplicaciones más rápidas y predecibles.',
+              },
+              {
+                type: 'p',
+                text: 'Para aplicaciones enterprise donde el mantenimiento, la escalabilidad y la estabilidad son críticos, Angular 19 se está convirtiendo en una alternativa cada vez más interesante frente a React.',
+              },
+            ],
           },
+
           {
             id: 2,
             title: 'Integrando Agentes de IA en flujos de trabajo tradicionales',
             excerpt:
-              'Cómo utilizamos Python y OpenAI para automatizar el 40% de las tareas administrativas de nuestros clientes.',
+              'Cómo estamos utilizando agentes de inteligencia artificial para automatizar tareas repetitivas en negocios reales.',
             benefit:
-              'Pensado para consultorios y negocios que quieren reducir tareas administrativas sin contratar más personal.',
+              'Especialmente útil para consultorios, negocios locales y startups que quieren reducir trabajo manual.',
             date: '28 Ene, 2026',
             readTime: '4 min lectura',
             category: 'Inteligencia Artificial',
+
+            content: [
+              {
+                type: 'p',
+                text: 'La inteligencia artificial ya no es solo para grandes empresas. Hoy cualquier negocio puede integrar automatización basada en IA para mejorar su eficiencia.',
+              },
+              {
+                type: 'h2',
+                text: 'Automatización de tareas repetitivas',
+              },
+              {
+                type: 'p',
+                text: 'Muchos negocios pierden horas en tareas administrativas: responder mensajes, confirmar citas, enviar recordatorios o clasificar clientes potenciales. Estas tareas pueden automatizarse con agentes de IA.',
+              },
+              {
+                type: 'h2',
+                text: 'IA como asistente operativo',
+              },
+              {
+                type: 'p',
+                text: 'Los agentes de IA pueden actuar como asistentes que responden consultas básicas, gestionan reservas o recopilan información antes de una llamada comercial.',
+              },
+              {
+                type: 'p',
+                text: 'En muchos proyectos hemos logrado reducir hasta un 40% del tiempo dedicado a tareas administrativas simplemente automatizando estos procesos.',
+              },
+            ],
           },
+
           {
             id: 3,
-            title: 'Optimizando el Core Web Vitals para e-commerce',
+            title: 'Optimizando Core Web Vitals para mejorar el SEO',
             excerpt:
-              'Estrategias avanzadas de carga diferida (Lazy Loading) y renderizado en servidor (SSR) para mejorar el SEO.',
+              'Cómo optimizar velocidad, interactividad y estabilidad visual para mejorar posicionamiento en Google.',
             benefit:
-              'Útil para e-commerce que quieren más ventas desde Google y menos usuarios abandonando por lentitud.',
+              'Fundamental para negocios que dependen de tráfico orgánico o quieren mejorar conversiones desde su web.',
             date: '15 Ene, 2026',
             readTime: '8 min lectura',
             category: 'Performance',
+
+            content: [
+              {
+                type: 'p',
+                text: 'Google utiliza métricas llamadas Core Web Vitals para medir la experiencia de usuario en un sitio web. Estas métricas influyen directamente en el posicionamiento en buscadores.',
+              },
+              {
+                type: 'h2',
+                text: 'LCP — Largest Contentful Paint',
+              },
+              {
+                type: 'p',
+                text: 'Esta métrica mide cuánto tarda en mostrarse el contenido principal de una página. Optimizar imágenes, reducir scripts innecesarios y usar renderizado eficiente puede mejorar significativamente este valor.',
+              },
+              {
+                type: 'h2',
+                text: 'CLS — Cumulative Layout Shift',
+              },
+              {
+                type: 'p',
+                text: 'El CLS mide cuánto se mueve el contenido mientras la página carga. Reservar espacio para imágenes y evitar cargas tardías ayuda a mejorar esta métrica.',
+              },
+              {
+                type: 'p',
+                text: 'Optimizar Core Web Vitals no solo mejora el SEO, también mejora la experiencia del usuario y aumenta la probabilidad de conversión.',
+              },
+            ],
           },
         ],
       },

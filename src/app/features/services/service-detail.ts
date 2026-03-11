@@ -182,5 +182,11 @@ export class ServiceDetail {
         url: 'https://jhdevagency.com/services/' + this.slug,
       });
     }
+    this.seo.updateSeo({
+      title: serviceData.title + ' | JH Dev Agency',
+      description: serviceData.desc,
+      url: 'https://jhdevagency.com/services/' + this.slug,
+      image: 'https://jhdevagency.com/og-image.jpg',
+    });
   }
 }

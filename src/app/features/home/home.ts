@@ -389,5 +389,12 @@ export class Home {
     websiteScript.text = JSON.stringify(websiteSchema);
 
     this.document.head.appendChild(websiteScript);
+    this.seo.updateSeo({
+      title: 'JH Dev Agency | Desarrollo Web, IA y SaaS',
+      description:
+        'Desarrollamos software, automatización e inteligencia artificial para negocios que quieren crecer.',
+      url: 'https://jhdevagency.com',
+      image: 'https://jhdevagency.com/og-image.jpg',
+    });
   }
 }

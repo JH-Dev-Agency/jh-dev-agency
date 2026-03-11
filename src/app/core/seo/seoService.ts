@@ -12,6 +12,7 @@ export class SeoService {
     keywords?: string;
     image?: string;
     url?: string;
+    type?: string;
   }) {
     this.title.setTitle(config.title);
 
@@ -30,15 +31,23 @@ export class SeoService {
     // OpenGraph
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
-
-    if (config.image) {
-      this.meta.updateTag({ property: 'og:image', content: config.image });
-    }
+    this.meta.updateTag({ property: 'og:type', content: config.type || 'website' });
 
     if (config.url) {
       this.meta.updateTag({ property: 'og:url', content: config.url });
     }
 
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    if (config.image) {
+      this.meta.updateTag({ property: 'og:image', content: config.image });
+    }
+
+    // Twitter
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: config.title });
+    this.meta.updateTag({ name: 'twitter:description', content: config.description });
+
+    if (config.image) {
+      this.meta.updateTag({ name: 'twitter:image', content: config.image });
+    }
   }
 }

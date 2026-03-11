@@ -101,5 +101,13 @@ export class Post {
     script.text = JSON.stringify(articleSchema);
 
     document.head.appendChild(script);
+
+    this.seo.updateSeo({
+      title: postData.title + ' | JH Dev Agency',
+      description: postData.excerpt,
+      url: 'https://jhdevagency.com/blog/' + this.id,
+      image: 'https://jhdevagency.com/og-image.jpg',
+      type: 'article',
+    });
   }
 }

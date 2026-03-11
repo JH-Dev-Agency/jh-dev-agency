@@ -80,5 +80,26 @@ export class Post {
         url: 'https://jhdevagency.com/blog/' + this.id,
       });
     }
+    const articleSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: postData.title,
+      description: postData.excerpt,
+      author: {
+        '@type': 'Person',
+        name: 'José Horacio',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'JH Dev Agency',
+      },
+      mainEntityOfPage: 'https://jhdevagency.com/blog/' + this.id,
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(articleSchema);
+
+    document.head.appendChild(script);
   }
 }

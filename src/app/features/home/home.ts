@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Settings } from '../../core/state/settings';
 import { SeoService } from '../../core/seo/seoService';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -341,6 +342,7 @@ import { SeoService } from '../../core/seo/seoService';
 export class Home {
   public settings = inject(Settings);
   seo = inject(SeoService);
+  document = inject(DOCUMENT);
 
   constructor() {
     this.seo.updateSeo({
@@ -350,5 +352,42 @@ export class Home {
       keywords: 'desarrollo web, automatización IA, software a medida, SaaS development',
       url: 'https://jhdevagency.com',
     });
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'JH Dev Agency',
+      url: 'https://jhdevagency.com',
+      logo: 'https://jhdevagency.com/assets/logo.png',
+      sameAs: ['https://github.com/JH-Dev-Agency'],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: 'contact@jhdevagency.com',
+      },
+    };
+
+    const script = this.document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+
+    this.document.head.appendChild(script);
+
+    const websiteSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'JH Dev Agency',
+      url: 'https://jhdevagency.com',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://jhdevagency.com/blog?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
+    };
+
+    const websiteScript = this.document.createElement('script');
+    websiteScript.type = 'application/ld+json';
+    websiteScript.text = JSON.stringify(websiteSchema);
+
+    this.document.head.appendChild(websiteScript);
   }
 }

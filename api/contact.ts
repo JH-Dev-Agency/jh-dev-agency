@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env['RESEND_API_KEY']);
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
@@ -12,7 +12,7 @@ export default async function handler(req: any, res: any) {
 
     await resend.emails.send({
       from: 'JH Dev Agency <onboarding@resend.dev>',
-      to: 'tu_correo@gmail.com',
+      to: 'jhoracioag19@gmail.com',
       subject: 'Nuevo lead desde jhdevagency.com',
       html: `
         <h2>Nuevo contacto</h2>

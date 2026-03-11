@@ -12,7 +12,7 @@ module.exports = async function handler(req, res) {
 
     await resend.emails.send({
       from: 'JH Dev Agency <hello@jhdevagency.com>',
-      to: 'jhoracioag11@gmail.com',
+      to: 'jhoracio19@hotmail.com',
       subject: 'Nuevo lead desde jhdevagency.com',
       html: `
         <h2>Nuevo contacto</h2>

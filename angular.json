@@ -24,7 +24,7 @@
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
 
-            "outputMode": "static",
+            "outputMode": "server",
 
             "ssr": {
               "entry": "src/server.ts"
@@ -54,10 +54,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "jh-dev-agency:build:production"
+              "buildTarget": "jh-dev-studio:build:production"
             },
             "development": {
-              "buildTarget": "jh-dev-agency:build:development"
+              "buildTarget": "jh-dev-studio:build:development"
             }
           },
           "defaultConfiguration": "development"

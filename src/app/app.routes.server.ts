@@ -3,20 +3,14 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'services/:slug',
-    renderMode: RenderMode.Prerender,
-    async getPrerenderParams() {
-      return []; // ← array vacío, no genera nada
-    },
+    renderMode: RenderMode.Server,
   },
   {
     path: 'blog/:id',
-    renderMode: RenderMode.Prerender,
-    async getPrerenderParams() {
-      return []; // ← array vacío, no genera nada
-    },
+    renderMode: RenderMode.Server,
   },
   {
     path: '**',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Server,
   },
 ];

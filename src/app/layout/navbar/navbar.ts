@@ -69,6 +69,15 @@ import { Settings } from '../../core/state/settings';
             {{ settings.text().nav.blog }}
           </a>
 
+          <!-- NUEVA HERRAMIENTA -->
+          <a
+            routerLink="/website-audit"
+            routerLinkActive="text-sky-500 font-semibold"
+            class="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors"
+          >
+            Audit
+          </a>
+
           <a
             routerLink="/contact"
             routerLinkActive="text-sky-500 font-semibold"
@@ -81,10 +90,10 @@ import { Settings } from '../../core/state/settings';
           <a
             routerLink="/contact"
             class="ml-2 rounded-md bg-zinc-900 dark:bg-white
-  px-3 py-1.5 lg:px-4 lg:py-2
-  text-xs lg:text-sm font-semibold
-  text-white dark:text-zinc-900
-  hover:opacity-90 transition-all whitespace-nowrap"
+              px-3 py-1.5 lg:px-4 lg:py-2
+              text-xs lg:text-sm font-semibold
+              text-white dark:text-zinc-900
+              hover:opacity-90 transition-all whitespace-nowrap"
           >
             Agendar llamada
           </a>
@@ -114,18 +123,8 @@ import { Settings } from '../../core/state/settings';
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               >
                 <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2" />
-                <path d="M12 20v2" />
-                <path d="m4.93 4.93 1.41 1.41" />
-                <path d="m17.66 17.66 1.41 1.41" />
-                <path d="M2 12h2" />
-                <path d="M20 12h2" />
-                <path d="m6.34 17.66-1.41-1.41" />
-                <path d="m19.07 4.93-1.41 1.41" />
               </svg>
             } @else {
               <svg
@@ -136,8 +135,6 @@ import { Settings } from '../../core/state/settings';
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
               >
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
               </svg>
@@ -150,26 +147,14 @@ import { Settings } from '../../core/state/settings';
             aria-label="Abrir menú"
             class="md:hidden flex items-center justify-center h-9 w-9 rounded-md text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
+            ☰
           </button>
         </div>
       </div>
+
+      <!-- MOBILE MENU -->
       <div
-        class="md:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        class="md:hidden overflow-hidden transition-all duration-300"
         [class.max-h-0]="!isOpen()"
         [class.opacity-0]="!isOpen()"
         [class.max-h-80]="isOpen()"
@@ -178,18 +163,14 @@ import { Settings } from '../../core/state/settings';
         <div
           class="bg-white dark:bg-zinc-950 p-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-col space-y-1"
         >
-          <a
-            routerLink="/"
-            (click)="isOpen.set(false)"
-            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
-          >
+          <a routerLink="/" (click)="isOpen.set(false)" class="block px-3 py-2.5 rounded-lg">
             {{ settings.text().nav.home }}
           </a>
 
           <a
             routerLink="/services"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            class="block px-3 py-2.5 rounded-lg"
           >
             {{ settings.text().nav.services }}
           </a>
@@ -197,24 +178,25 @@ import { Settings } from '../../core/state/settings';
           <a
             routerLink="/portfolio"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            class="block px-3 py-2.5 rounded-lg"
           >
             {{ settings.text().nav.portfolio }}
           </a>
 
-          <a
-            routerLink="/blog"
-            (click)="isOpen.set(false)"
-            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
-          >
+          <a routerLink="/blog" (click)="isOpen.set(false)" class="block px-3 py-2.5 rounded-lg">
             {{ settings.text().nav.blog }}
           </a>
 
+          <!-- NUEVA TOOL -->
           <a
-            routerLink="/contact"
+            routerLink="/website-audit"
             (click)="isOpen.set(false)"
-            class="block px-3 py-2.5 rounded-lg text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            class="block px-3 py-2.5 rounded-lg"
           >
+            Website Audit
+          </a>
+
+          <a routerLink="/contact" (click)="isOpen.set(false)" class="block px-3 py-2.5 rounded-lg">
             {{ settings.text().nav.contact }}
           </a>
         </div>

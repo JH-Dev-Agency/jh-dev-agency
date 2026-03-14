@@ -20,6 +20,11 @@ export const routes: Routes = [
 
   { path: 'portfolio', component: Portfolio },
   { path: 'contact', component: Contact },
+  {
+    path: 'website-audit',
+    loadComponent: () =>
+      import('./features/website-audit/website-audit').then((m) => m.WebsiteAudit),
+  },
 
   { path: 'blog', component: Blog },
   { path: 'blog/:id', component: Post },

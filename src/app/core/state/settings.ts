@@ -361,6 +361,22 @@ export class Settings {
           },
         ],
       },
+      audit: {
+        title: 'Analiza el rendimiento de tu sitio web',
+        subtitle:
+          'Obtén un reporte gratuito basado en Google Lighthouse. Descubre qué tan rápido carga tu sitio y cómo puede posicionar mejor en Google.',
+        input_placeholder: 'https://tusitio.com',
+        analyze_btn: 'Analizar',
+        loading: 'Analizando sitio web...',
+        performance: 'Rendimiento',
+        seo: 'SEO',
+        accessibility: 'Accesibilidad',
+        best_practices: 'Buenas Prácticas',
+        cta_title: 'Tu sitio web podría rendir mejor',
+        cta_desc:
+          'Ayudamos a negocios a alcanzar puntuaciones de rendimiento superiores a 90 y mejorar su posicionamiento en Google mediante ingeniería web de alto rendimiento.',
+        cta_btn: 'Obtener auditoría profesional',
+      },
       footer: {
         tagline:
           'Desarrollamos software, automatización e inteligencia artificial para negocios que quieren crecer.',
@@ -722,6 +738,22 @@ export class Settings {
             ],
           },
         ],
+      },
+      audit: {
+        title: 'Analyze your website performance',
+        subtitle:
+          'Get a free performance report powered by Google Lighthouse. Discover how fast your website loads and how it can rank better on Google.',
+        input_placeholder: 'https://example.com',
+        analyze_btn: 'Analyze',
+        loading: 'Analyzing website...',
+        performance: 'Performance',
+        seo: 'SEO',
+        accessibility: 'Accessibility',
+        best_practices: 'Best Practices',
+        cta_title: 'Your website could perform better',
+        cta_desc:
+          'We help businesses reach 90+ performance scores and improve their Google ranking through high-performance engineering.',
+        cta_btn: 'Get a professional audit',
       },
       footer: {
         tagline:

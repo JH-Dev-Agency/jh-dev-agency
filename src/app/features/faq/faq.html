@@ -1,0 +1,96 @@
+<section class="py-24 bg-zinc-950 text-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Preguntas frecuentes</h2>
+
+      <p class="text-zinc-400">
+        Resolvemos algunas de las dudas más comunes antes de comenzar un proyecto.
+      </p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+      <div
+        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
+        (click)="toggle(0)"
+      >
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">Si ya tengo Facebook o Instagram, ¿necesito una web?</h3>
+
+          <span class="text-zinc-400">
+            {{ openIndex() === 0 ? '-' : '+' }}
+          </span>
+        </div>
+
+        @if (openIndex() === 0) {
+          <p class="text-zinc-400 mt-3">
+            Las redes sociales ayudan a promocionar tu negocio, pero una página web te permite
+            aparecer en Google, transmitir mayor confianza y recibir consultas o reservas
+            directamente desde internet.
+          </p>
+        }
+      </div>
+
+      <div
+        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
+        (click)="toggle(1)"
+      >
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">¿Cuánto tarda en desarrollarse una página web?</h3>
+
+          <span class="text-zinc-400">
+            {{ openIndex() === 1 ? '-' : '+' }}
+          </span>
+        </div>
+
+        @if (openIndex() === 1) {
+          <p class="text-zinc-400 mt-3">
+            Dependiendo del proyecto, una web profesional puede tardar entre 1 y 3 semanas.
+            Aplicaciones o productos más complejos pueden tardar entre 8 y 12 semanas.
+          </p>
+        }
+      </div>
+
+      <div
+        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
+        (click)="toggle(2)"
+      >
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">¿Mi página aparecerá en Google?</h3>
+
+          <span class="text-zinc-400">
+            {{ openIndex() === 2 ? '-' : '+' }}
+          </span>
+        </div>
+
+        @if (openIndex() === 2) {
+          <p class="text-zinc-400 mt-3">
+            Sí. Todos los sitios que desarrollamos incluyen optimización SEO técnica y buenas
+            prácticas de rendimiento para mejorar su visibilidad en buscadores.
+          </p>
+        }
+      </div>
+
+      <div
+        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
+        (click)="toggle(3)"
+      >
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">¿Mi página web funcionará en celulares?</h3>
+
+          <span class="text-zinc-400">
+            {{ openIndex() === 3 ? '-' : '+' }}
+          </span>
+        </div>
+
+        @if (openIndex() === 3) {
+          <p class="text-zinc-400 mt-3">
+            Sí. Todas nuestras webs se desarrollan con diseño responsive, lo que significa que
+            funcionan correctamente en celulares, tablets y computadoras.
+          </p>
+        }
+      </div>
+    </div>
+  </div>
+</section>

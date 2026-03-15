@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Settings } from '../../core/state/settings';
 import { SeoService } from '../../core/seo/seoService';
 import { DOCUMENT } from '@angular/common';
+import { Faq } from '../faq/faq';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, Faq],
   template: `
     <div class="relative overflow-hidden">
       <section class="relative pt-20 pb-32 md:pt-32 xl:pb-40">
@@ -295,6 +296,8 @@ import { DOCUMENT } from '@angular/common';
           </p>
         </div>
       </section>
+
+      <app-faq />
 
       <section class="relative isolate overflow-hidden bg-zinc-900 py-16 sm:py-24 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">

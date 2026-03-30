@@ -9,6 +9,12 @@
   },
   "routes": [
     {
+      "src": "/(.*)",
+      "has": [{ "type": "host", "value": "www.jhdevagency.com" }],
+      "headers": { "Location": "https://jhdevagency.com/$1" },
+      "status": 301
+    },
+    {
       "src": "/(.*\\.(js|css|ico|png|jpg|svg|webp|woff2|woff|ttf|map|json))",
       "dest": "/$1"
     },

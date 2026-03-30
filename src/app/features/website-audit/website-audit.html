@@ -1,0 +1,192 @@
+<section class="pt-32 pb-24 bg-zinc-950 min-h-screen text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- HERO -->
+
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        {{ settings.text().audit.title }}
+      </h1>
+
+      <p class="text-zinc-400 text-lg">
+        {{ settings.text().audit.subtitle }}
+      </p>
+    </div>
+
+    <!-- INPUT -->
+
+    <div class="max-w-2xl mx-auto mb-10">
+      <div class="flex gap-3">
+        <input
+          type="url"
+          inputmode="url"
+          autocomplete="off"
+          [placeholder]="settings.text().audit.input_placeholder"
+          class="flex-1 px-4 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-white outline-none focus:border-sky-500 transition"
+          (input)="url.set($any($event.target).value)"
+        />
+
+        <button
+          (click)="analyze()"
+          class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold transition"
+        >
+          {{ settings.text().audit.analyze_btn }}
+        </button>
+      </div>
+    </div>
+
+    <!-- TRUST -->
+
+    <div class="flex justify-center items-center gap-6 text-sm text-zinc-500 mb-16">
+      <span>Google Lighthouse</span>
+      <span>•</span>
+      <span>Core Web Vitals</span>
+      <span>•</span>
+      <span>PageSpeed Insights</span>
+    </div>
+
+    <!-- LOADING -->
+
+    @if (loading()) {
+      <div class="text-center py-12 space-y-3">
+        <div class="animate-pulse text-zinc-400 text-lg">
+          {{ settings.text().audit.loading }}
+        </div>
+
+        <div class="text-zinc-500 text-sm space-y-1">
+          @for (step of settings.text().audit.loading_steps; track step) {
+            <p>✔ {{ step }}</p>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- RESULTS -->
+
+    @if (result()) {
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
+          <p class="text-sm text-zinc-400 mb-3">
+            {{ settings.text().audit.performance }}
+          </p>
+
+          <p
+            class="text-4xl font-bold"
+            [class.text-green-400]="result().performance >= 90"
+            [class.text-yellow-400]="result().performance >= 60 && result().performance < 90"
+            [class.text-red-400]="result().performance < 60"
+          >
+            {{ result().performance }}
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
+          <p class="text-sm text-zinc-400 mb-3">
+            {{ settings.text().audit.seo }}
+          </p>
+
+          <p
+            class="text-4xl font-bold"
+            [class.text-green-400]="result().seo >= 90"
+            [class.text-yellow-400]="result().seo >= 60 && result().seo < 90"
+            [class.text-red-400]="result().seo < 60"
+          >
+            {{ result().seo }}
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
+          <p class="text-sm text-zinc-400 mb-3">
+            {{ settings.text().audit.accessibility }}
+          </p>
+
+          <p
+            class="text-4xl font-bold"
+            [class.text-green-400]="result().accessibility >= 90"
+            [class.text-yellow-400]="result().accessibility >= 60 && result().accessibility < 90"
+            [class.text-red-400]="result().accessibility < 60"
+          >
+            {{ result().accessibility }}
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
+          <p class="text-sm text-zinc-400 mb-3">
+            {{ settings.text().audit.best_practices }}
+          </p>
+
+          <p
+            class="text-4xl font-bold"
+            [class.text-green-400]="result().bestPractices >= 90"
+            [class.text-yellow-400]="result().bestPractices >= 60 && result().bestPractices < 90"
+            [class.text-red-400]="result().bestPractices < 60"
+          >
+            {{ result().bestPractices }}
+          </p>
+        </div>
+      </div>
+
+      <!-- RESULT INTERPRETATION -->
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-lg text-zinc-300">
+          {{ settings.text().audit.avg_score_text }}
+
+          <span class="font-bold text-white">
+            {{
+              (result().performance +
+                result().seo +
+                result().accessibility +
+                result().bestPractices) /
+                4 | number: '1.0-0'
+            }}/100
+          </span>
+        </p>
+
+        <p class="text-zinc-400 mt-2">
+          {{ settings.text().audit.avg_score_desc }}
+        </p>
+      </div>
+
+      <!-- CTA -->
+
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <h3 class="text-xl font-semibold mb-3">
+          {{ settings.text().audit.cta_title }}
+        </h3>
+
+        <p class="text-zinc-400 mb-6">
+          {{ settings.text().audit.cta_desc }}
+        </p>
+
+        <a
+          routerLink="/contact"
+          class="inline-block px-6 py-3 bg-white text-black font-semibold rounded-lg hover:opacity-90 transition"
+        >
+          {{ settings.text().audit.cta_btn }}
+        </a>
+      </div>
+    }
+
+    <!-- SEO CONTENT -->
+
+    <section class="max-w-4xl mx-auto text-zinc-300 space-y-6">
+      <h2 class="text-2xl font-semibold text-white">
+        {{ settings.text().audit.seo_section_title }}
+      </h2>
+
+      <p>
+        {{ settings.text().audit.seo_section_desc }}
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white">
+        {{ settings.text().audit.performance_section_title }}
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        @for (item of settings.text().audit.benefits; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+  </div>
+</section>

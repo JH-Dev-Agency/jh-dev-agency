@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-primary: #0ea5e9;
+  --color-brand-dark: #09090b;
+}
+
+/* ⚡️ SOLUCIÓN MAESTRA:
+  Sobrescribimos la variante 'dark' para que solo funcione con la clase .dark
+  y no con la preferencia del sistema operativo.
+*/
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  body {
+    /* Por defecto (Light) */
+    @apply bg-white text-zinc-900;
+  }
+
+  /* Cuando activamos la clase .dark manual */
+  :root.dark body {
+    @apply bg-zinc-950 text-white;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/jh-dev-studio/browser",
+  "functions": {
+    "api/index.mjs": {
+      "runtime": "@vercel/node@5.6.15"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|svg|webp|woff2|woff|ttf|map|json))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.mjs"
+    }
+  ]
+}

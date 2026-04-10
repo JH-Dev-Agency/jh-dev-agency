@@ -3,7 +3,6 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class Settings {
-  
   private platformId = inject(PLATFORM_ID);
 
   readonly language = signal<'es' | 'en'>('es');
@@ -201,6 +200,16 @@ export class Settings {
               'Presencia profesional en línea y canal directo para consultas y citas médicas.',
             tags: ['Angular', 'SEO Local', 'Web Performance'],
             image: 'assets/portfolio/otorrinotlaxcala.webp',
+          },
+          {
+            id: 'cabana-maria-maria',
+            title: 'Cabaña María María · Salón y Jardín de Eventos',
+            category: 'Cliente real · Landing Page de Alto Rendimiento',
+            desc: 'Diseño y desarrollo de una landing page premium para un salón de eventos líder en Tlaxcala. El proyecto se centró en la optimización de la conversión (CRO) y una arquitectura técnica de alta velocidad para dispositivos móviles.',
+            result:
+              'Canal de ventas optimizado con redirección directa a WhatsApp y posicionamiento en el Local Pack de Google mediante SEO avanzado.',
+            tags: ['Next.js', 'Tailwind CSS', 'SEO Avanzado'],
+            image: 'assets/portfolio/cabanamariamaria.webp',
           },
         ],
       },
@@ -615,6 +624,16 @@ export class Settings {
               'Professional online presence and direct channel for medical inquiries and appointments.',
             tags: ['Angular', 'SEO Local', 'Web Performance'],
             image: 'assets/portfolio/otorrinotlaxcala.webp',
+          },
+          {
+            id: 'cabana-maria-maria',
+            title: 'Cabaña María María · Event Venue & Gardens',
+            category: 'Real-world Project · High-Performance Landing Page',
+            desc: 'Design and development of a premium landing page for a leading event venue in Tlaxcala, Mexico. The project focused on Conversion Rate Optimization (CRO) and high-speed mobile architecture to ensure a seamless booking experience.',
+            result:
+              'Optimized sales funnel with direct WhatsApp integration and enhanced visibility in Google’s Local Pack through advanced SEO strategies.',
+            tags: ['Next.js', 'Tailwind CSS', 'Advanced SEO'],
+            image: 'assets/portfolio/cabanamariamaria.webp',
           },
         ],
       },

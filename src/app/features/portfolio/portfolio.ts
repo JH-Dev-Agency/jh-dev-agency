@@ -33,7 +33,6 @@ import { Settings } from '../../core/state/settings';
             <article
               class="group cursor-pointer flex flex-col transition-all duration-300 hover:-translate-y-1"
             >
-              <!-- IMAGE -->
               <div
                 class="relative w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800 aspect-[16/9] border border-zinc-200 dark:border-zinc-700"
               >
@@ -49,7 +48,6 @@ import { Settings } from '../../core/state/settings';
                 ></div>
               </div>
 
-              <!-- CONTENT -->
               <div class="max-w-xl">
                 @if (project.category) {
                   <p
@@ -90,6 +88,35 @@ import { Settings } from '../../core/state/settings';
                     </p>
                   }
                 </div>
+
+                @if (project.link) {
+                  <div class="flex items-center gap-4 mt-6">
+                    <a
+                      [href]="project.link"
+                      target="_blank"
+                      class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 dark:bg-sky-500/10 px-4 py-2 text-sm font-medium text-sky-600 dark:text-sky-400 ring-1 ring-inset ring-sky-500/20 transition-all hover:bg-sky-100 dark:hover:bg-sky-500/20 hover:scale-105"
+                    >
+                      {{ settings.text().portfolio.preview_suffix }}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      >
+                        >
+                        <path d="M15 3h6v6" />
+                        <path d="M10 14 21 3" />
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      </svg>
+                    </a>
+                  </div>
+                }
               </div>
             </article>
           }

@@ -187,6 +187,7 @@ export class Settings {
       portfolio: {
         label: 'Portafolio',
         title: 'Clientes y proyectos',
+        preview_suffix: 'Vista previa',
         subtitle:
           'Proyectos reales desarrollados para negocios que buscan mejorar su presencia digital y atraer más clientes mediante software moderno y rápido.',
 
@@ -200,6 +201,7 @@ export class Settings {
               'Presencia profesional en línea y canal directo para consultas y citas médicas.',
             tags: ['Angular', 'SEO Local', 'Web Performance'],
             image: 'assets/portfolio/otorrinotlaxcala.webp',
+            link: 'https://otorrinotlaxcala.com/',
           },
           {
             id: 'cabana-maria-maria',
@@ -210,6 +212,7 @@ export class Settings {
               'Canal de ventas optimizado con redirección directa a WhatsApp y posicionamiento en el Local Pack de Google mediante SEO avanzado.',
             tags: ['Next.js', 'Tailwind CSS', 'SEO Avanzado'],
             image: 'assets/portfolio/cabanamariamaria.webp',
+            link: 'https://cabanamariamaria.com',
           },
         ],
       },
@@ -612,6 +615,7 @@ export class Settings {
       portfolio: {
         label: 'Portfolio',
         title: 'Clients and projects',
+        preview_suffix: 'Live Preview',
         subtitle:
           'Real projects developed for businesses looking to improve their digital presence and attract more clients through modern, fast software.',
         items: [
@@ -624,6 +628,7 @@ export class Settings {
               'Professional online presence and direct channel for medical inquiries and appointments.',
             tags: ['Angular', 'SEO Local', 'Web Performance'],
             image: 'assets/portfolio/otorrinotlaxcala.webp',
+            link: 'https://otorrinotlaxcala.com/',
           },
           {
             id: 'cabana-maria-maria',
@@ -634,6 +639,7 @@ export class Settings {
               'Optimized sales funnel with direct WhatsApp integration and enhanced visibility in Google’s Local Pack through advanced SEO strategies.',
             tags: ['Next.js', 'Tailwind CSS', 'Advanced SEO'],
             image: 'assets/portfolio/cabanamariamaria.webp',
+            link: 'https://cabanamariamaria.com',
           },
         ],
       },

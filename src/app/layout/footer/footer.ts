@@ -99,7 +99,7 @@ import { Settings } from '../../core/state/settings';
                   </li>
                   <li>
                     <a routerLink="/website-audit" class="text-sm leading-6 text-zinc-600 dark:text-zinc-400 hover:text-sky-500 transition-colors">
-                      Website Audit
+                      {{ settings.text().footer.audit_link }}
                     </a>
                   </li>
                   <li>
@@ -129,13 +129,13 @@ import { Settings } from '../../core/state/settings';
                 <!-- Contact CTA -->
                 <div class="mt-10">
                   <h3 class="text-sm font-semibold leading-6 text-zinc-900 dark:text-white mb-4">
-                    ¿Listo para empezar?
+                    {{ settings.text().footer.ready_title }}
                   </h3>
                   <a
                     routerLink="/contact"
                     class="inline-flex rounded-md bg-zinc-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-zinc-900 hover:opacity-90 transition-all"
                   >
-                    Agendar llamada →
+                    {{ settings.text().footer.ready_btn }}
                   </a>
                 </div>
               </div>
@@ -149,7 +149,7 @@ import { Settings } from '../../core/state/settings';
             {{ settings.text().footer.rights }}
           </p>
           <p class="text-xs text-zinc-400 dark:text-zinc-600">
-            Hecho con Angular 19 · Desplegado en Vercel
+            {{ settings.text().footer.madeWith }}
           </p>
         </div>
       </div>

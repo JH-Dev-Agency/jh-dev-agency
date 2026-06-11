@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { Settings } from '../../core/state/settings';
 
 @Component({
   selector: 'app-faq',
@@ -6,6 +7,7 @@ import { Component, signal } from '@angular/core';
   templateUrl: './faq.html',
 })
 export class Faq {
+  public settings = inject(Settings);
   openIndex = signal<number | null>(null);
 
   toggle(index: number) {

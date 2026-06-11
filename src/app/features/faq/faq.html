@@ -1,96 +1,36 @@
-<section class="py-24 bg-zinc-950 text-white">
+<section class="py-24 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white transition-colors duration-300">
   <div class="max-w-4xl mx-auto px-6">
     <!-- Header -->
     <div class="text-center mb-14">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Preguntas frecuentes</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">{{ settings.text().faq.title }}</h2>
 
-      <p class="text-zinc-400">
-        Resolvemos algunas de las dudas más comunes antes de comenzar un proyecto.
+      <p class="text-zinc-600 dark:text-zinc-400">
+        {{ settings.text().faq.subtitle }}
       </p>
     </div>
 
     <!-- FAQ Items -->
     <div class="space-y-4">
-      <div
-        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
-        (click)="toggle(0)"
-      >
-        <div class="flex justify-between items-center">
-          <h3 class="font-semibold">Si ya tengo Facebook o Instagram, ¿necesito una web?</h3>
+      @for (item of settings.text().faq.items; track item.q; let i = $index) {
+        <div
+          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 bg-zinc-50 dark:bg-zinc-900 cursor-pointer transition-colors"
+          (click)="toggle(i)"
+        >
+          <div class="flex justify-between items-center">
+            <h3 class="font-semibold">{{ item.q }}</h3>
 
-          <span class="text-zinc-400">
-            {{ openIndex() === 0 ? '-' : '+' }}
-          </span>
+            <span class="text-zinc-500 dark:text-zinc-400">
+              {{ openIndex() === i ? '-' : '+' }}
+            </span>
+          </div>
+
+          @if (openIndex() === i) {
+            <p class="text-zinc-600 dark:text-zinc-400 mt-3">
+              {{ item.a }}
+            </p>
+          }
         </div>
-
-        @if (openIndex() === 0) {
-          <p class="text-zinc-400 mt-3">
-            Las redes sociales ayudan a promocionar tu negocio, pero una página web te permite
-            aparecer en Google, transmitir mayor confianza y recibir consultas o reservas
-            directamente desde internet.
-          </p>
-        }
-      </div>
-
-      <div
-        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
-        (click)="toggle(1)"
-      >
-        <div class="flex justify-between items-center">
-          <h3 class="font-semibold">¿Cuánto tarda en desarrollarse una página web?</h3>
-
-          <span class="text-zinc-400">
-            {{ openIndex() === 1 ? '-' : '+' }}
-          </span>
-        </div>
-
-        @if (openIndex() === 1) {
-          <p class="text-zinc-400 mt-3">
-            Dependiendo del proyecto, una web profesional puede tardar entre 1 y 3 semanas.
-            Aplicaciones o productos más complejos pueden tardar entre 8 y 12 semanas.
-          </p>
-        }
-      </div>
-
-      <div
-        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
-        (click)="toggle(2)"
-      >
-        <div class="flex justify-between items-center">
-          <h3 class="font-semibold">¿Mi página aparecerá en Google?</h3>
-
-          <span class="text-zinc-400">
-            {{ openIndex() === 2 ? '-' : '+' }}
-          </span>
-        </div>
-
-        @if (openIndex() === 2) {
-          <p class="text-zinc-400 mt-3">
-            Sí. Todos los sitios que desarrollamos incluyen optimización SEO técnica y buenas
-            prácticas de rendimiento para mejorar su visibilidad en buscadores.
-          </p>
-        }
-      </div>
-
-      <div
-        class="border border-zinc-800 rounded-xl p-5 bg-zinc-900 cursor-pointer"
-        (click)="toggle(3)"
-      >
-        <div class="flex justify-between items-center">
-          <h3 class="font-semibold">¿Mi página web funcionará en celulares?</h3>
-
-          <span class="text-zinc-400">
-            {{ openIndex() === 3 ? '-' : '+' }}
-          </span>
-        </div>
-
-        @if (openIndex() === 3) {
-          <p class="text-zinc-400 mt-3">
-            Sí. Todas nuestras webs se desarrollan con diseño responsive, lo que significa que
-            funcionan correctamente en celulares, tablets y computadoras.
-          </p>
-        }
-      </div>
+      }
     </div>
   </div>
 </section>

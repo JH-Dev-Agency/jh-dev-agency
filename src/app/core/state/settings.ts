@@ -216,6 +216,28 @@ export class Settings {
           },
         ],
       },
+      faq: {
+        title: 'Preguntas frecuentes',
+        subtitle: 'Resolvemos algunas de las dudas más comunes antes de comenzar un proyecto.',
+        items: [
+          {
+            q: 'Si ya tengo Facebook o Instagram, ¿necesito una web?',
+            a: 'Las redes sociales ayudan a promocionar tu negocio, pero una página web te permite aparecer en Google, transmitir mayor confianza y recibir consultas o reservas directamente desde internet.',
+          },
+          {
+            q: '¿Cuánto tarda en desarrollarse una página web?',
+            a: 'Dependiendo del proyecto, una web profesional puede tardar entre 1 y 3 semanas. Aplicaciones o productos más complejos pueden tardar entre 8 y 12 semanas.',
+          },
+          {
+            q: '¿Mi página aparecerá en Google?',
+            a: 'Sí. Todos los sitios que desarrollamos incluyen optimización SEO técnica y buenas prácticas de rendimiento para mejorar su visibilidad en buscadores.',
+          },
+          {
+            q: '¿Mi página web funcionará en celulares?',
+            a: 'Sí. Todas nuestras webs se desarrollan con diseño responsive, lo que significa que funcionan correctamente en celulares, tablets y computadoras.',
+          },
+        ],
+      },
       contact: {
         title: 'Agenda una llamada',
         subtitle:
@@ -235,6 +257,16 @@ export class Settings {
           message_placeholder:
             'Cuéntanos qué hace tu negocio, qué problema quieres resolver y en qué plazo te gustaría lanzar.',
           btn: 'Solicitar llamada de 30 min',
+          btn_another: 'Enviar otro mensaje',
+          send_whatsapp: 'Enviarme a WhatsApp',
+          process: 'Procesando...',
+          redirecting: 'Te redirigiremos a WhatsApp para enviar el mensaje.',
+          success_title: '¡Mensaje preparado!',
+          success_desc: 'Redirigiendo a WhatsApp de manera segura...',
+          error_msg: 'Hubo un error al procesar el mensaje. Intenta de nuevo o escríbenos directamente.',
+          req_name: 'Este campo es obligatorio',
+          req_email: 'Ingresa un correo válido',
+          req_message: 'Describe brevemente tu proyecto',
           after_submit:
             'Te responderemos en menos de 24 horas con los siguientes pasos para tu proyecto.',
         },
@@ -247,10 +279,11 @@ export class Settings {
           scope_global: 'Trabajamos con clientes en México y otros países de habla hispana.',
         },
       },
+      whatsappTooltip: 'Escríbenos por WhatsApp',
       blog: {
         title: 'Ingeniería & Pensamiento',
         subtitle:
-          'Ideas, análisis técnicos y estrategias sobre cómo usamos software, arquitectura moderna e inteligencia artificial para construir productos digitales rápidos, escalables y rentables.',
+          'Ideas, análisis técnicos y strategies sobre cómo usamos software, arquitectura moderna e inteligencia artificial para construir productos digitales rápidos, escalables y rentables.',
         author_line:
           'Escrito por José Horacio, ingeniero de software enfocado en aplicaciones de alto rendimiento, arquitectura moderna y automatización con IA.',
 
@@ -421,6 +454,10 @@ export class Settings {
         tagline:
           'Desarrollamos software, automatización e inteligencia artificial para negocios que quieren crecer.',
         rights: 'Todos los derechos reservados.',
+        madeWith: 'Hecho con Angular 19 · Desplegado en Vercel',
+        ready_title: '¿Listo para empezar?',
+        ready_btn: 'Agendar llamada →',
+        audit_link: 'Auditoría Web',
         sections: { company: 'Compañía', legal: 'Legal' },
         links: {
           about: 'Sobre Nosotros',
@@ -430,7 +467,6 @@ export class Settings {
         },
       },
       notFound: {
-        // Esta es la correcta
         code: '404',
         title: 'Sistema Fuera de Línea',
         desc: 'La ruta que intentas explorar no existe o ha sido movida. Regresa a la base segura.',
@@ -643,6 +679,28 @@ export class Settings {
           },
         ],
       },
+      faq: {
+        title: 'Frequently asked questions',
+        subtitle: 'We answer some of the most common questions before starting a project.',
+        items: [
+          {
+            q: 'If I already have Facebook or Instagram, do I need a website?',
+            a: 'Social networks help promote your business, but a website allows you to appear on Google, convey more trust and receive inquiries or bookings directly from the internet.',
+          },
+          {
+            q: 'How long does it take to develop a website?',
+            a: 'Depending on the project, a professional website can take between 1 and 3 weeks. More complex applications or products can take between 8 and 12 weeks.',
+          },
+          {
+            q: 'Will my website appear on Google?',
+            a: 'Yes. All the sites we develop include technical SEO optimization and performance best practices to improve their visibility in search engines.',
+          },
+          {
+            q: 'Will my website work on mobile phones?',
+            a: 'Yes. All our websites are developed with responsive design, which means they work perfectly on mobile phones, tablets and computers.',
+          },
+        ],
+      },
       contact: {
         title: 'Schedule a call',
         subtitle:
@@ -661,6 +719,16 @@ export class Settings {
           message_placeholder:
             "Tell us what your business does, what problem you want to solve and when you'd like to launch.",
           btn: 'Request 30-min call',
+          btn_another: 'Send another message',
+          send_whatsapp: 'Send me to WhatsApp',
+          process: 'Processing...',
+          redirecting: 'You will be redirected to WhatsApp to send the message.',
+          success_title: 'Message prepared!',
+          success_desc: 'Redirecting to WhatsApp securely...',
+          error_msg: 'There was an error processing the message. Please try again or message us directly.',
+          req_name: 'This field is required',
+          req_email: 'Enter a valid email address',
+          req_message: 'Briefly describe your project',
           after_submit: "We'll reply within 24 hours with next steps for your project.",
         },
         info: {
@@ -672,6 +740,7 @@ export class Settings {
           scope_global: 'We work with clients in Mexico and other Spanish-speaking countries.',
         },
       },
+      whatsappTooltip: 'Message us on WhatsApp',
       blog: {
         title: 'Engineering & Thinking',
         subtitle:
@@ -840,6 +909,10 @@ export class Settings {
         tagline:
           'We develop software, automation and artificial intelligence for businesses that want to grow.',
         rights: 'All rights reserved.',
+        madeWith: 'Built with Angular 19 · Deployed on Vercel',
+        ready_title: 'Ready to start?',
+        ready_btn: 'Schedule a call →',
+        audit_link: 'Website Audit',
         sections: { company: 'Company', legal: 'Legal' },
         links: {
           about: 'About Us',

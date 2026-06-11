@@ -1,4 +1,4 @@
-<section class="pt-32 pb-24 bg-zinc-950 min-h-screen text-white">
+<section class="pt-32 pb-24 bg-white dark:bg-zinc-950 min-h-screen text-zinc-900 dark:text-white transition-colors duration-300">
   <div class="max-w-6xl mx-auto px-6">
     <!-- HERO -->
 
@@ -7,7 +7,7 @@
         {{ settings.text().audit.title }}
       </h1>
 
-      <p class="text-zinc-400 text-lg">
+      <p class="text-zinc-600 dark:text-zinc-400 text-lg">
         {{ settings.text().audit.subtitle }}
       </p>
     </div>
@@ -21,13 +21,13 @@
           inputmode="url"
           autocomplete="off"
           [placeholder]="settings.text().audit.input_placeholder"
-          class="flex-1 px-4 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-white outline-none focus:border-sky-500 transition"
+          class="flex-1 px-4 py-3 rounded-lg bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-white outline-none focus:border-sky-500 transition-colors"
           (input)="url.set($any($event.target).value)"
         />
 
         <button
           (click)="analyze()"
-          class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold transition"
+          class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-600 dark:hover:bg-sky-400 text-white font-semibold transition"
         >
           {{ settings.text().audit.analyze_btn }}
         </button>
@@ -36,7 +36,7 @@
 
     <!-- TRUST -->
 
-    <div class="flex justify-center items-center gap-6 text-sm text-zinc-500 mb-16">
+    <div class="flex justify-center items-center gap-6 text-sm text-zinc-500 dark:text-zinc-500 mb-16">
       <span>Google Lighthouse</span>
       <span>•</span>
       <span>Core Web Vitals</span>
@@ -48,11 +48,11 @@
 
     @if (loading()) {
       <div class="text-center py-12 space-y-3">
-        <div class="animate-pulse text-zinc-400 text-lg">
+        <div class="animate-pulse text-zinc-500 dark:text-zinc-400 text-lg">
           {{ settings.text().audit.loading }}
         </div>
 
-        <div class="text-zinc-500 text-sm space-y-1">
+        <div class="text-zinc-400 dark:text-zinc-500 text-sm space-y-1">
           @for (step of settings.text().audit.loading_steps; track step) {
             <p>✔ {{ step }}</p>
           }
@@ -64,60 +64,72 @@
 
     @if (result()) {
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
-          <p class="text-sm text-zinc-400 mb-3">
+        <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-6 text-center border border-zinc-200 dark:border-zinc-800 transition-colors">
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">
             {{ settings.text().audit.performance }}
           </p>
 
           <p
             class="text-4xl font-bold"
+            [class.text-green-500]="result().performance >= 90"
             [class.text-green-400]="result().performance >= 90"
+            [class.text-yellow-500]="result().performance >= 60 && result().performance < 90"
             [class.text-yellow-400]="result().performance >= 60 && result().performance < 90"
+            [class.text-red-500]="result().performance < 60"
             [class.text-red-400]="result().performance < 60"
           >
             {{ result().performance }}
           </p>
         </div>
 
-        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
-          <p class="text-sm text-zinc-400 mb-3">
+        <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-6 text-center border border-zinc-200 dark:border-zinc-800 transition-colors">
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">
             {{ settings.text().audit.seo }}
           </p>
 
           <p
             class="text-4xl font-bold"
+            [class.text-green-500]="result().seo >= 90"
             [class.text-green-400]="result().seo >= 90"
+            [class.text-yellow-500]="result().seo >= 60 && result().seo < 90"
             [class.text-yellow-400]="result().seo >= 60 && result().seo < 90"
+            [class.text-red-500]="result().seo < 60"
             [class.text-red-400]="result().seo < 60"
           >
             {{ result().seo }}
           </p>
         </div>
 
-        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
-          <p class="text-sm text-zinc-400 mb-3">
+        <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-6 text-center border border-zinc-200 dark:border-zinc-800 transition-colors">
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">
             {{ settings.text().audit.accessibility }}
           </p>
 
           <p
             class="text-4xl font-bold"
+            [class.text-green-500]="result().accessibility >= 90"
             [class.text-green-400]="result().accessibility >= 90"
+            [class.text-yellow-500]="result().accessibility >= 60 && result().accessibility < 90"
             [class.text-yellow-400]="result().accessibility >= 60 && result().accessibility < 90"
+            [class.text-red-500]="result().accessibility < 60"
             [class.text-red-400]="result().accessibility < 60"
           >
             {{ result().accessibility }}
           </p>
         </div>
 
-        <div class="bg-zinc-900 rounded-xl p-6 text-center border border-zinc-800">
-          <p class="text-sm text-zinc-400 mb-3">
+        <div class="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-6 text-center border border-zinc-200 dark:border-zinc-800 transition-colors">
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">
             {{ settings.text().audit.best_practices }}
           </p>
 
           <p
             class="text-4xl font-bold"
+            [class.text-green-500]="result().bestPractices >= 90"
             [class.text-green-400]="result().bestPractices >= 90"
+            [class.text-yellow-500]="result().bestPractices >= 60 && result().bestPractices < 90"
             [class.text-yellow-400]="result().bestPractices >= 60 && result().bestPractices < 90"
+            [class.text-red-500]="result().bestPractices < 60"
             [class.text-red-400]="result().bestPractices < 60"
           >
             {{ result().bestPractices }}
@@ -128,10 +140,10 @@
       <!-- RESULT INTERPRETATION -->
 
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="text-lg text-zinc-300">
+        <p class="text-lg text-zinc-700 dark:text-zinc-300">
           {{ settings.text().audit.avg_score_text }}
 
-          <span class="font-bold text-white">
+          <span class="font-bold text-zinc-900 dark:text-white">
             {{
               (result().performance +
                 result().seo +
@@ -142,7 +154,7 @@
           </span>
         </p>
 
-        <p class="text-zinc-400 mt-2">
+        <p class="text-zinc-500 dark:text-zinc-400 mt-2">
           {{ settings.text().audit.avg_score_desc }}
         </p>
       </div>
@@ -154,13 +166,13 @@
           {{ settings.text().audit.cta_title }}
         </h3>
 
-        <p class="text-zinc-400 mb-6">
+        <p class="text-zinc-600 dark:text-zinc-400 mb-6">
           {{ settings.text().audit.cta_desc }}
         </p>
 
         <a
           routerLink="/contact"
-          class="inline-block px-6 py-3 bg-white text-black font-semibold rounded-lg hover:opacity-90 transition"
+          class="inline-block px-6 py-3 bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold rounded-lg hover:opacity-90 transition"
         >
           {{ settings.text().audit.cta_btn }}
         </a>
@@ -169,8 +181,8 @@
 
     <!-- SEO CONTENT -->
 
-    <section class="max-w-4xl mx-auto text-zinc-300 space-y-6">
-      <h2 class="text-2xl font-semibold text-white">
+    <section class="max-w-4xl mx-auto text-zinc-700 dark:text-zinc-300 space-y-6">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white">
         {{ settings.text().audit.seo_section_title }}
       </h2>
 
@@ -178,7 +190,7 @@
         {{ settings.text().audit.seo_section_desc }}
       </p>
 
-      <h2 class="text-2xl font-semibold text-white">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white">
         {{ settings.text().audit.performance_section_title }}
       </h2>
 

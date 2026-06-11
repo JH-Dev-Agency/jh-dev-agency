@@ -59,7 +59,7 @@ import DOMPurify from 'dompurify';
                 <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">WhatsApp</p>
                 <a href="https://wa.me/522464637426" target="_blank" rel="noopener noreferrer"
                   class="text-sm font-medium hover:text-emerald-500 transition">
-                  Escribir por WhatsApp
+                  {{ settings.text().whatsappTooltip }}
                 </a>
               </div>
             </div>
@@ -104,14 +104,14 @@ import DOMPurify from 'dompurify';
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">¡Mensaje preparado!</h3>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">{{ settings.text().contact.form.success_title }}</h3>
               <p class="text-zinc-600 dark:text-zinc-400 mb-6">
-                Redirigiendo a WhatsApp de manera segura...
+                {{ settings.text().contact.form.success_desc }}
               </p>
               <button
                 (click)="resetForm()"
                 class="rounded-lg border border-zinc-300 dark:border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition">
-                Enviar otro mensaje
+                {{ settings.text().contact.form.btn_another }}
               </button>
             </div>
           } @else {
@@ -126,7 +126,7 @@ import DOMPurify from 'dompurify';
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                   </svg>
                   <p class="text-sm text-red-700 dark:text-red-300">
-                    Hubo un error al procesar el mensaje. Intenta de nuevo o escríbenos directamente.
+                    {{ settings.text().contact.form.error_msg }}
                   </p>
                 </div>
               }
@@ -144,7 +144,7 @@ import DOMPurify from 'dompurify';
                     class="w-full rounded-lg px-4 py-2.5 bg-white/70 dark:bg-zinc-800/70 border border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-sky-500 outline-none transition"
                   />
                   @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
-                    <p class="text-xs text-red-500 mt-1">Este campo es obligatorio</p>
+                    <p class="text-xs text-red-500 mt-1">{{ settings.text().contact.form.req_name }}</p>
                   }
                 </div>
 
@@ -160,7 +160,7 @@ import DOMPurify from 'dompurify';
                     class="w-full rounded-lg px-4 py-2.5 bg-white/70 dark:bg-zinc-800/70 border border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-sky-500 outline-none transition"
                   />
                   @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
-                    <p class="text-xs text-red-500 mt-1">Ingresa un correo válido</p>
+                    <p class="text-xs text-red-500 mt-1">{{ settings.text().contact.form.req_email }}</p>
                   }
                 </div>
 
@@ -212,7 +212,7 @@ import DOMPurify from 'dompurify';
                     class="w-full rounded-lg px-4 py-3 bg-white/70 dark:bg-zinc-800/70 border border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-sky-500 outline-none transition resize-none"
                   ></textarea>
                   @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
-                    <p class="text-xs text-red-500 mt-1">Describe brevemente tu proyecto</p>
+                    <p class="text-xs text-red-500 mt-1">{{ settings.text().contact.form.req_message }}</p>
                   }
                 </div>
 
@@ -231,14 +231,14 @@ import DOMPurify from 'dompurify';
                     <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
                       <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-dasharray="31.4" stroke-dashoffset="10" stroke-linecap="round" />
                     </svg>
-                    Procesando...
+                    {{ settings.text().contact.form.process }}
                   } @else {
-                    Enviarme a WhatsApp
+                    {{ settings.text().contact.form.send_whatsapp }}
                   }
                 </button>
 
                 <p class="text-xs text-zinc-500 text-center">
-                  Te redirigiremos a WhatsApp para enviar el mensaje.
+                  {{ settings.text().contact.form.redirecting }}
                 </p>
               </div>
             </form>

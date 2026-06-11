@@ -150,25 +150,61 @@ import { Faq } from '../faq/faq';
                 >Django</span
               >
             </div>
+<div
+  class="group flex flex-col items-center gap-2 hover:scale-110 transition-transform"
+  appAnimateOnScroll delay="500ms"
+>
+  <svg
+    class="h-10 w-10 text-[#00758F] dark:text-[#4479A1]"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.5 16.5C17.5 16.5 15.5 18 12 18C8.5 18 6.5 16.5 6.5 16.5V15H17.5V16.5ZM17.5 13.5H6.5V12H17.5V13.5ZM17.5 10.5H6.5V9H17.5V10.5Z"
+    />
+  </svg>
+  <span
+    class="text-xs font-semibold text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
+    >MySQL</span
+  >
+</div>
 
-            <div
-              class="group flex flex-col items-center gap-2 hover:scale-110 transition-transform"
-            >
-              <svg
-                class="h-10 w-10 text-[#00758F] dark:text-[#4479A1]"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.5 16.5C17.5 16.5 15.5 18 12 18C8.5 18 6.5 16.5 6.5 16.5V15H17.5V16.5ZM17.5 13.5H6.5V12H17.5V13.5ZM17.5 10.5H6.5V9H17.5V10.5Z"
-                />
-              </svg>
-              <span
-                class="text-xs font-semibold text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
-                >MySQL</span
-              >
-            </div>
+<div
+  class="group flex flex-col items-center gap-2 hover:scale-110 transition-transform"
+  appAnimateOnScroll delay="600ms"
+>
+  <svg
+    class="h-10 w-10 text-[#61DAFB]"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M11.955 1.564c-3.336 0-6.425.688-8.625 1.864-2.261 1.209-3.33 2.766-3.33 4.298 0 1.53.864 2.894 2.84 4.015-1.077 1.951-1.63 4.195-1.427 6.082.203 1.884 1.248 3.498 3.013 4.292 1.764.793 3.992.658 6.13-.538 2.05-1.144 4.004-2.91 5.399-5.111 1.395 2.201 3.349 3.967 5.399 5.111 2.138 1.196 4.366 1.331 6.13.538 1.765-.794 2.81-2.408 3.013-4.292.203-1.887-.35-4.131-1.427-6.082 1.976-1.121 2.84-2.485 2.84-4.015 0-1.532-1.069-3.089-3.33-4.298-2.2-1.176-5.289-1.864-8.625-1.864zm0 2.222c3.084 0 5.867.625 7.625 1.564 1.84.983 2.5 1.986 2.5 2.376 0 .389-.865 1.488-3.09 2.651-1.258-2.227-3.064-4.223-5.242-5.749a21.464 21.464 0 00-1.793-.842zm-8.835 1.405c1.696-1.01 4.341-1.652 7.042-1.652.628 0 1.25.041 1.854.12A18.892 18.892 0 0115.688 8.44c-2.316.516-4.908.815-7.653.844C6.012 9.278 4.264 8.784 3.12 7.191zm15.42 2.868c2.403-1.253 3.395-2.298 3.395-2.738 0-.441-1.082-1.484-3.585-2.825-1.678-1.547-3.87-2.617-6.425-3.094a19.262 19.262 0 014.28 4.905c1.196 2.115 2.051 4.417 2.335 6.752zm-12.72.164a21.31 21.31 0 014.156-4.92c1.782.906 3.033 2.203 3.655 3.738.563 1.393.722 2.923.473 4.444a10.016 10.016 0 01-1.748 4.444c-1.205 1.708-2.842 3.04-4.836 3.86a9.782 9.782 0 01-4.708.497c-1.391-.258-2.651-1.002-3.6-2.091a18.232 18.232 0 016.608-9.972zm2.097 5.163c-.88.625-2.05 1.055-3.376 1.25-1.256.185-2.657.108-4.043-.244 1.365-2.54 3.32-4.747 5.625-6.38a16.611 16.611 0 001.794 5.374zm1.903.023a15.89 15.89 0 00-1.89-5.187c2.26 1.583 4.17 3.731 5.513 6.195-1.334.331-2.684.4-3.882.208-1.272-.204-2.39-.639-3.238-1.233z" />
+  </svg>
+  <span
+    class="text-xs font-semibold text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
+    >React</span
+  >
+</div>
+
+<div
+  class="group flex flex-col items-center gap-2 hover:scale-110 transition-transform"
+  appAnimateOnScroll delay="700ms"
+>
+  <svg
+    class="h-10 w-10 text-zinc-900 dark:text-white"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM10.5843 8.35338L16.4258 16.0354C16.8906 15.6323 17.2917 15.1611 17.6186 14.6366L11.5168 6.58614H9.46743V17.0674H11.0826V10.2858L10.5843 8.35338ZM14.1983 6.58614H15.8134V13.8824L14.1983 11.7511V6.58614Z"/>
+  </svg>
+  <span
+    class="text-xs font-semibold text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
+    >Next.js</span
+  >
+</div>
           </div>
         </div>
       </section>
@@ -297,47 +333,59 @@ import { Faq } from '../faq/faq';
         </div>
       </section>
 
-      <app-faq />
+      @defer (on viewport) {
+        <app-faq />
+      } @placeholder {
+        <div class="h-[500px] w-full flex items-center justify-center text-zinc-400 dark:text-zinc-600">
+          <span class="animate-pulse">Cargando preguntas frecuentes...</span>
+        </div>
+      }
 
-      <section class="relative isolate overflow-hidden bg-zinc-900 py-16 sm:py-24 lg:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div
-            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2"
-          >
-            <div class="max-w-xl lg:max-w-lg">
-              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                {{ settings.text().home.cta_banner.title }}
-              </h2>
-              <p class="mt-4 text-lg leading-8 text-zinc-300">
-                {{ settings.text().home.cta_banner.desc }}
-              </p>
-              <div class="mt-6 flex max-w-md gap-x-4">
-                <a
-                  routerLink="/contact"
-                  class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  {{ settings.text().home.cta_banner.btn }}
-                </a>
+      @defer (on viewport) {
+        <section class="relative isolate overflow-hidden bg-zinc-900 py-16 sm:py-24 lg:py-32">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div
+              class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2"
+            >
+              <div class="max-w-xl lg:max-w-lg">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  {{ settings.text().home.cta_banner.title }}
+                </h2>
+                <p class="mt-4 text-lg leading-8 text-zinc-300">
+                  {{ settings.text().home.cta_banner.desc }}
+                </p>
+                <div class="mt-6 flex max-w-md gap-x-4">
+                  <a
+                    routerLink="/contact"
+                    class="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    {{ settings.text().home.cta_banner.btn }}
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-col items-start justify-end lg:order-last">
-              <div class="rounded-2xl bg-white/5 p-2 ring-1 ring-white/10 w-full">
-                <div
-                  class="h-32 bg-gradient-to-r from-sky-500 to-indigo-600 opacity-20 blur-2xl"
-                ></div>
-                <div class="p-6">
-                  <div class="text-zinc-400 font-mono text-xs">
-                    @for (line of settings.text().home.cta_banner.terminal; track line) {
-                      <span>{{ line }}</span><br />
-                    }
-                    <span class="animate-pulse text-sky-400">_</span>
+              <div class="flex flex-col items-start justify-end lg:order-last">
+                <div class="rounded-2xl bg-white/5 p-2 ring-1 ring-white/10 w-full">
+                  <div
+                    class="h-32 bg-gradient-to-r from-sky-500 to-indigo-600 opacity-20 blur-2xl"
+                  ></div>
+                  <div class="p-6">
+                    <div class="text-zinc-400 font-mono text-xs">
+                      @for (line of settings.text().home.cta_banner.terminal; track line) {
+                        <span>{{ line }}</span><br />
+                      }
+                      <span class="animate-pulse text-sky-400">_</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </section>
+      } @placeholder {
+        <div class="h-[400px] w-full bg-zinc-900 flex items-center justify-center">
+          <div class="w-8 h-8 rounded-full border-2 border-sky-500 border-t-transparent animate-spin"></div>
         </div>
-      </section>
+      }
     </div>
   `,
 })

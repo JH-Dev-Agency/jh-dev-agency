@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Settings } from '../../core/state/settings';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   template: `
     <section class="py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -29,7 +29,7 @@ import { Settings } from '../../core/state/settings';
         <div
           class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-10 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2"
         >
-          @for (project of settings.text().portfolio.items; track project.id) {
+          @for (project of settings.text().portfolio.items; track project.id; let i = $index) {
             <article
               class="group cursor-pointer flex flex-col transition-all duration-300 hover:-translate-y-1"
             >
@@ -37,9 +37,10 @@ import { Settings } from '../../core/state/settings';
                 class="relative w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800 aspect-[16/9] border border-zinc-200 dark:border-zinc-700"
               >
                 <img
-                  [src]="project.image"
+                  [ngSrc]="project.image"
                   [alt]="project.title"
-                  loading="lazy"
+                  [priority]="i < 2"
+                  fill
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 

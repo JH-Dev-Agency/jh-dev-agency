@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { Settings } from '../../core/state/settings';
 import { SeoService } from '../../core/seo/seoService';
 import { ContactStatus } from '../../core/models';
+import DOMPurify from 'dompurify';
 
 @Component({
   selector: 'app-contact',
@@ -103,9 +104,9 @@ import { ContactStatus } from '../../core/models';
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">¡Mensaje enviado!</h3>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">¡Mensaje preparado!</h3>
               <p class="text-zinc-600 dark:text-zinc-400 mb-6">
-                {{ settings.text().contact.form.after_submit }}
+                Redirigiendo a WhatsApp de manera segura...
               </p>
               <button
                 (click)="resetForm()"
@@ -125,7 +126,7 @@ import { ContactStatus } from '../../core/models';
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                   </svg>
                   <p class="text-sm text-red-700 dark:text-red-300">
-                    Hubo un error al enviar el mensaje. Intenta de nuevo o escríbenos directamente.
+                    Hubo un error al procesar el mensaje. Intenta de nuevo o escríbenos directamente.
                   </p>
                 </div>
               }
@@ -230,14 +231,14 @@ import { ContactStatus } from '../../core/models';
                     <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
                       <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-dasharray="31.4" stroke-dashoffset="10" stroke-linecap="round" />
                     </svg>
-                    Enviando...
+                    Procesando...
                   } @else {
-                    {{ settings.text().contact.form.btn }}
+                    Enviarme a WhatsApp
                   }
                 </button>
 
                 <p class="text-xs text-zinc-500 text-center">
-                  Te responderemos en menos de 24 horas. Sin spam.
+                  Te redirigiremos a WhatsApp para enviar el mensaje.
                 </p>
               </div>
             </form>
@@ -272,7 +273,7 @@ export class Contact {
     });
   }
 
-  async onSubmit(): Promise<void> {
+  onSubmit(): void {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
@@ -284,16 +285,31 @@ export class Contact {
     this.status.set('sending');
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.contactForm.value),
-      });
+      const { name, email, type, budget, message } = this.contactForm.value;
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      // Sanitizar los datos con DOMPurify para prevenir XSS
+      const safeName = DOMPurify.sanitize(name);
+      const safeEmail = DOMPurify.sanitize(email);
+      const safeType = DOMPurify.sanitize(type);
+      const safeBudget = DOMPurify.sanitize(budget);
+      const safeMessage = DOMPurify.sanitize(message);
 
-      this.status.set('success');
-      this.contactForm.reset({ type: 'Desarrollo Web', budget: '$500 – $1,500 USD' });
+      // Construir el mensaje formateado para WhatsApp
+      const waText = '*Nuevo Contacto Web*\\n*Nombre:* ' + safeName + '\\n*Email:* ' + safeEmail + '\\n*Interés:* ' + safeType + '\\n*Presupuesto:* ' + safeBudget + '\\n\\n*Mensaje:*\\n' + safeMessage;
+
+      // Número destino (formato internacional sin el +)
+      const waNumber = '522464637426';
+      
+      // Crear la URL y redirigir
+      const waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waText);
+      
+      // Pequeño timeout para simular la carga y que el usuario vea que reacciona
+      setTimeout(() => {
+        window.open(waUrl, '_blank');
+        this.status.set('success');
+        this.contactForm.reset({ type: 'Desarrollo Web', budget: '$500 – $1,500 USD' });
+      }, 600);
+
     } catch (error) {
       console.error('[Contact] form submit error:', error);
       this.status.set('error');

@@ -295,7 +295,7 @@ export class Contact {
       const safeMessage = DOMPurify.sanitize(message);
 
       // Construir el mensaje formateado para WhatsApp
-      const waText = '*Nuevo Contacto Web*\\n*Nombre:* ' + safeName + '\\n*Email:* ' + safeEmail + '\\n*Interés:* ' + safeType + '\\n*Presupuesto:* ' + safeBudget + '\\n\\n*Mensaje:*\\n' + safeMessage;
+      const waText = '*Nuevo Contacto Web*\n*Nombre:* ' + safeName + '\n*Email:* ' + safeEmail + '\n*Interés:* ' + safeType + '\n*Presupuesto:* ' + safeBudget + '\n\n*Mensaje:*\n' + safeMessage;
 
       // Número destino (formato internacional sin el +)
       const waNumber = '522464637426';

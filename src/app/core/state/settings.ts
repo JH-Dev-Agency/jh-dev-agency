@@ -472,6 +472,132 @@ export class Settings {
         desc: 'La ruta que intentas explorar no existe o ha sido movida. Regresa a la base segura.',
         btn: 'Volver al Dashboard',
       },
+      legal: {
+        privacy: {
+          title: 'Aviso de Privacidad',
+          updated: 'Última actualización: 13 de julio de 2026',
+          back_home: 'Volver al inicio',
+          contact_line: 'Para cualquier duda sobre este aviso, escríbenos a',
+          sections: [
+            {
+              title: '1. Responsable del tratamiento',
+              body: [
+                'JH Dev Agency, con domicilio en Puebla, México, es responsable del tratamiento de tus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y su reglamento.',
+              ],
+            },
+            {
+              title: '2. Datos que recopilamos',
+              body: ['Recopilamos únicamente los datos que tú nos proporcionas y datos técnicos mínimos de navegación:'],
+              list: [
+                'Datos del formulario de contacto: nombre completo, correo electrónico, tipo de proyecto, presupuesto estimado y mensaje.',
+                'Datos de navegación anónimos y agregados (páginas visitadas, tipo de dispositivo) a través de Vercel Analytics. No utilizamos cookies de rastreo publicitario.',
+                'Preferencias de uso del sitio (tema claro/oscuro) almacenadas localmente en tu navegador; nunca salen de tu dispositivo.',
+              ],
+            },
+            {
+              title: '3. Finalidades del tratamiento',
+              body: ['Utilizamos tus datos exclusivamente para:'],
+              list: [
+                'Responder a tus consultas y solicitudes de información.',
+                'Coordinar llamadas y reuniones que tú solicites.',
+                'Elaborar propuestas y cotizaciones de servicios.',
+                'Mejorar el contenido y rendimiento de nuestro sitio web.',
+              ],
+            },
+            {
+              title: '4. Compartición con terceros',
+              body: [
+                'No vendemos ni rentamos tus datos personales. Algunos servicios de terceros intervienen en el funcionamiento del sitio:',
+              ],
+              list: [
+                'WhatsApp (Meta Platforms): si eliges enviarnos tu mensaje por WhatsApp, el contenido se transmite a través de esa plataforma bajo sus propias políticas de privacidad.',
+                'Vercel: aloja este sitio web y procesa métricas de uso anónimas.',
+                'Google (PageSpeed Insights): si utilizas nuestra herramienta de auditoría web, la URL que ingresas se envía a la API de Google para generar el reporte.',
+              ],
+            },
+            {
+              title: '5. Derechos ARCO',
+              body: [
+                'Tienes derecho a Acceder, Rectificar, Cancelar u Oponerte al tratamiento de tus datos personales, así como a revocar tu consentimiento en cualquier momento. Para ejercer estos derechos, envíanos una solicitud por correo electrónico indicando tu nombre completo, el derecho que deseas ejercer y una descripción clara de los datos en cuestión. Responderemos en un plazo máximo de 20 días hábiles.',
+              ],
+            },
+            {
+              title: '6. Conservación y seguridad',
+              body: [
+                'Conservamos tus datos únicamente durante el tiempo necesario para las finalidades descritas o mientras exista una relación comercial activa. Aplicamos medidas técnicas y organizativas razonables para proteger tu información contra acceso, alteración o pérdida no autorizados.',
+              ],
+            },
+            {
+              title: '7. Cambios a este aviso',
+              body: [
+                'Podemos actualizar este aviso de privacidad ocasionalmente. Cualquier cambio será publicado en esta página con la fecha de última actualización. Te recomendamos revisarla periódicamente.',
+              ],
+            },
+          ],
+        },
+        terms: {
+          title: 'Términos de Uso',
+          updated: 'Última actualización: 13 de julio de 2026',
+          back_home: 'Volver al inicio',
+          contact_line: 'Para cualquier duda sobre estos términos, escríbenos a',
+          sections: [
+            {
+              title: '1. Aceptación de los términos',
+              body: [
+                'Al acceder y utilizar el sitio web jhdevagency.com aceptas estos términos de uso. Si no estás de acuerdo con alguno de ellos, te pedimos no utilizar el sitio.',
+              ],
+            },
+            {
+              title: '2. Uso del sitio',
+              body: [
+                'Este sitio tiene fines informativos y comerciales: presentar nuestros servicios, portafolio y contenido técnico. Te comprometes a utilizarlo de forma lícita y a no intentar vulnerar su seguridad, disponibilidad o integridad.',
+              ],
+            },
+            {
+              title: '3. Herramienta de auditoría web',
+              body: [
+                'La herramienta de auditoría es gratuita y se ofrece "tal cual", sin garantías de ningún tipo. Los resultados provienen de Google Lighthouse (PageSpeed Insights) y pueden variar entre ejecuciones. Solo debes analizar sitios web propios o sobre los que tengas autorización. Los resultados son orientativos y no constituyen una auditoría profesional completa.',
+              ],
+            },
+            {
+              title: '4. Propiedad intelectual',
+              body: [
+                'El contenido de este sitio (textos, diseño, código, logotipos e imágenes) es propiedad de JH Dev Agency o se utiliza con autorización. No está permitida su reproducción o uso comercial sin consentimiento previo por escrito. Las marcas de terceros mencionadas (Angular, Google, WhatsApp, etc.) pertenecen a sus respectivos titulares.',
+              ],
+            },
+            {
+              title: '5. Enlaces a sitios de terceros',
+              body: [
+                'El sitio contiene enlaces a plataformas externas (WhatsApp, GitHub, Facebook, sitios de clientes). No somos responsables del contenido ni de las prácticas de privacidad de esos sitios.',
+              ],
+            },
+            {
+              title: '6. Limitación de responsabilidad',
+              body: [
+                'JH Dev Agency no será responsable por daños directos o indirectos derivados del uso o imposibilidad de uso de este sitio o de la herramienta de auditoría. No garantizamos que el sitio esté disponible de forma ininterrumpida o libre de errores.',
+              ],
+            },
+            {
+              title: '7. Servicios profesionales',
+              body: [
+                'La información de servicios y precios publicada en este sitio es orientativa y no constituye una oferta vinculante. Los proyectos de desarrollo se rigen por la propuesta o contrato específico acordado con cada cliente.',
+              ],
+            },
+            {
+              title: '8. Ley aplicable',
+              body: [
+                'Estos términos se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier controversia se someterá a los tribunales competentes de Puebla, México.',
+              ],
+            },
+            {
+              title: '9. Modificaciones',
+              body: [
+                'Podemos modificar estos términos en cualquier momento. Los cambios entran en vigor al publicarse en esta página.',
+              ],
+            },
+          ],
+        },
+      },
     },
     en: {
       brandName: 'JH Dev Agency',
@@ -926,6 +1052,132 @@ export class Settings {
         title: 'System Offline',
         desc: 'The route you are trying to explore does not exist or has been moved. Return to safe base.',
         btn: 'Back to Dashboard',
+      },
+      legal: {
+        privacy: {
+          title: 'Privacy Notice',
+          updated: 'Last updated: July 13, 2026',
+          back_home: 'Back to home',
+          contact_line: 'For any questions about this notice, write to us at',
+          sections: [
+            {
+              title: '1. Data controller',
+              body: [
+                'JH Dev Agency, based in Puebla, Mexico, is responsible for the processing of your personal data in accordance with the Mexican Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP) and its regulations.',
+              ],
+            },
+            {
+              title: '2. Data we collect',
+              body: ['We only collect the data you provide to us and minimal technical browsing data:'],
+              list: [
+                'Contact form data: full name, email address, project type, estimated budget and message.',
+                'Anonymous, aggregated browsing data (pages visited, device type) through Vercel Analytics. We do not use advertising tracking cookies.',
+                'Site preferences (light/dark theme) stored locally in your browser; they never leave your device.',
+              ],
+            },
+            {
+              title: '3. Purposes of processing',
+              body: ['We use your data exclusively to:'],
+              list: [
+                'Respond to your inquiries and information requests.',
+                'Coordinate calls and meetings you request.',
+                'Prepare service proposals and quotes.',
+                'Improve the content and performance of our website.',
+              ],
+            },
+            {
+              title: '4. Sharing with third parties',
+              body: [
+                'We do not sell or rent your personal data. Some third-party services are involved in the operation of this site:',
+              ],
+              list: [
+                'WhatsApp (Meta Platforms): if you choose to send us your message via WhatsApp, the content is transmitted through that platform under its own privacy policies.',
+                'Vercel: hosts this website and processes anonymous usage metrics.',
+                'Google (PageSpeed Insights): if you use our website audit tool, the URL you enter is sent to the Google API to generate the report.',
+              ],
+            },
+            {
+              title: '5. Your rights (ARCO)',
+              body: [
+                'You have the right to Access, Rectify, Cancel or Object to the processing of your personal data, as well as to revoke your consent at any time. To exercise these rights, send us a request by email including your full name, the right you wish to exercise and a clear description of the data in question. We will respond within a maximum of 20 business days.',
+              ],
+            },
+            {
+              title: '6. Retention and security',
+              body: [
+                'We keep your data only for as long as necessary for the purposes described or while an active business relationship exists. We apply reasonable technical and organizational measures to protect your information against unauthorized access, alteration or loss.',
+              ],
+            },
+            {
+              title: '7. Changes to this notice',
+              body: [
+                'We may update this privacy notice from time to time. Any changes will be published on this page with the last updated date. We recommend reviewing it periodically.',
+              ],
+            },
+          ],
+        },
+        terms: {
+          title: 'Terms of Use',
+          updated: 'Last updated: July 13, 2026',
+          back_home: 'Back to home',
+          contact_line: 'For any questions about these terms, write to us at',
+          sections: [
+            {
+              title: '1. Acceptance of terms',
+              body: [
+                'By accessing and using the jhdevagency.com website you accept these terms of use. If you do not agree with any of them, please do not use the site.',
+              ],
+            },
+            {
+              title: '2. Use of the site',
+              body: [
+                'This site is for informational and commercial purposes: presenting our services, portfolio and technical content. You agree to use it lawfully and not to attempt to compromise its security, availability or integrity.',
+              ],
+            },
+            {
+              title: '3. Website audit tool',
+              body: [
+                'The audit tool is free and provided "as is", without warranties of any kind. Results come from Google Lighthouse (PageSpeed Insights) and may vary between runs. You should only analyze websites you own or are authorized to test. Results are indicative and do not constitute a complete professional audit.',
+              ],
+            },
+            {
+              title: '4. Intellectual property',
+              body: [
+                'The content of this site (texts, design, code, logos and images) is the property of JH Dev Agency or used with authorization. Reproduction or commercial use without prior written consent is not permitted. Third-party trademarks mentioned (Angular, Google, WhatsApp, etc.) belong to their respective owners.',
+              ],
+            },
+            {
+              title: '5. Links to third-party sites',
+              body: [
+                'The site contains links to external platforms (WhatsApp, GitHub, Facebook, client websites). We are not responsible for the content or privacy practices of those sites.',
+              ],
+            },
+            {
+              title: '6. Limitation of liability',
+              body: [
+                'JH Dev Agency shall not be liable for direct or indirect damages arising from the use or inability to use this site or the audit tool. We do not guarantee that the site will be available uninterrupted or error-free.',
+              ],
+            },
+            {
+              title: '7. Professional services',
+              body: [
+                'Service and pricing information published on this site is indicative and does not constitute a binding offer. Development projects are governed by the specific proposal or contract agreed with each client.',
+              ],
+            },
+            {
+              title: '8. Governing law',
+              body: [
+                'These terms are governed by the laws of Mexico. Any dispute shall be submitted to the competent courts of Puebla, Mexico.',
+              ],
+            },
+            {
+              title: '9. Modifications',
+              body: [
+                'We may modify these terms at any time. Changes take effect upon publication on this page.',
+              ],
+            },
+          ],
+        },
       },
     },
   };

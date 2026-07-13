@@ -115,12 +115,12 @@ import { Settings } from '../../core/state/settings';
                 </h3>
                 <ul role="list" class="mt-6 space-y-4">
                   <li>
-                    <a href="#" class="text-sm leading-6 text-zinc-600 dark:text-zinc-400 hover:text-sky-500 transition-colors">
+                    <a routerLink="/privacy" class="text-sm leading-6 text-zinc-600 dark:text-zinc-400 hover:text-sky-500 transition-colors">
                       {{ settings.text().footer.links.privacy }}
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="text-sm leading-6 text-zinc-600 dark:text-zinc-400 hover:text-sky-500 transition-colors">
+                    <a routerLink="/terms" class="text-sm leading-6 text-zinc-600 dark:text-zinc-400 hover:text-sky-500 transition-colors">
                       {{ settings.text().footer.links.terms }}
                     </a>
                   </li>

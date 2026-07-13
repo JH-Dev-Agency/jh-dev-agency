@@ -30,7 +30,7 @@ export class WebsiteAudit {
       description:
         'Analyze your website speed, SEO score, accessibility and best practices with our free Google Lighthouse powered audit tool.',
       keywords: 'website speed test, seo audit tool, lighthouse test, website performance checker',
-      url: 'https://jhdevagency.com/audit',
+      url: 'https://jhdevagency.com/website-audit',
     });
 
     this.addSchema();
@@ -45,7 +45,7 @@ export class WebsiteAudit {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Website Speed Test & SEO Audit Tool',
-      url: 'https://jhdevagency.com/audit',
+      url: 'https://jhdevagency.com/website-audit',
       applicationCategory: 'DeveloperApplication',
       operatingSystem: 'Any',
       description: 'Free website speed test and SEO audit tool powered by Google Lighthouse.',

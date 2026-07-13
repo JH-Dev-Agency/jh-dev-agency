@@ -35,6 +35,16 @@ export const routes: Routes = [
     loadComponent: () => import('./features/blog/post').then((m) => m.Post),
   },
   {
+    path: 'privacy',
+    data: { doc: 'privacy' },
+    loadComponent: () => import('./features/legal/legal-page').then((m) => m.LegalPage),
+  },
+  {
+    path: 'terms',
+    data: { doc: 'terms' },
+    loadComponent: () => import('./features/legal/legal-page').then((m) => m.LegalPage),
+  },
+  {
     path: '**',
     loadComponent: () => import('./features/not-found/not-found').then((m) => m.NotFound),
   },
